@@ -1,0 +1,163 @@
+<div class="user__settings__wrapper">
+    <h2>Användarinställningar</h2>
+    <h3>Visar användare för Bärgarna AB</h3>
+        <div class="user__list">
+            <div class="user__list__row">
+                <p class="user__list__data">
+                    <span class="user__list__taxonomy">Användarnamn </span>
+                    <span class="user__list__value">stefan@grafikcentralen.se</span>
+                </p>
+                
+                <p class="user__list__data">
+                    <span class="user__list__taxonomy">Namn </span>
+                    <span class="user__list__value">Stefan Jakobsson</span>
+                </p>
+
+                <p class="user__list__action"> Redigera </p>
+                <p class="user__list__action"> Ta bort </p>
+            </div>
+       
+  
+        
+            <div class="user__list__row">
+                <p class="user__list__data">
+                    <span class="user__list__taxonomy">Användarnamn </span>
+                    <span class="user__list__value">stefan@grafikcentralen.se</span>
+                </p>
+                
+                <p class="user__list__data">
+                    <span class="user__list__taxonomy">Namn </span>
+                    <span class="user__list__value">Stefan Jakobsson</span>
+                </p>
+
+                <p class="user__list__action"> Redigera </p>
+                <p class="user__list__action"> Ta bort </p>
+            </div>
+      
+  
+       
+            <div class="user__list__row">
+                <p class="user__list__data">
+                    <span class="user__list__taxonomy">Användarnamn </span>
+                    <span class="user__list__value">stefan@grafikcentralen.se</span>
+                </p>
+                
+                <p class="user__list__data">
+                    <span class="user__list__taxonomy">Namn </span>
+                    <span class="user__list__value">Stefan Jakobsson</span>
+                </p>
+
+                <p class="user__list__action"> Redigera </p>
+                <p class="user__list__action"> Ta bort </p>
+            </div>
+        </div>
+
+
+
+        <button class="user__list__add__button"
+        onClick="document.getElementById('user-list-add').showModal()"
+        >Lägg till användare</button>
+        
+
+        <dialog class="user__list__add" id="user-list-add">
+            <!-- Inputs:
+            Användarnamn
+            Namn
+            E-post
+            Telefonnummer
+            Väljföretag - select: "Bärgarna AB", "Grafikcentralen AB"
+            Behörigheter - checkbox: "Huvudadministratör", "Företagsadministratör", "Systemadministratör", Bärgare, Ekonomi,Dirigering, Bärgning Koodrinator, Register, Extern beställare, 
+            Funtionlaitet - checkbox: "Multitransport", "Tma", "Bärgning" -->
+
+            <div class="user__field__group">
+                <label for="user__name">Användarnamn</label>
+                <input type="text" id="user__name" name="user__name" placeholder="Användarnamn">
+            </div>
+
+            <div class="user__field__group">
+                <label for="user__name">Namn</label>
+                <input type="text" id="user__name" name="user__name" placeholder="Namn">
+
+            </div>
+
+            <div class="user__field__group">
+                <label for="user__name">E-post</label>
+                <input type="text" id="user__name" name="user__name" placeholder="E-post">
+
+            </div>
+
+            <div class="user__field__group">
+                <label for="user__name">Telefonnummer</label>
+                <input type="text" id="user__name" name="user__name" placeholder="Telefonnummer">
+
+            </div>
+
+            <div class="user__field__group">
+                <label for="user__name">Välj företag</label>
+                <select name="user__company" id="user__company">
+                    <option value="Bärgarna AB">Bärgarna AB</option>
+                    <option value="Grafikcentralen AB">Grafikcentralen AB</option>
+                </select>
+
+            </div>
+
+            <div class="user__checkbox__group">
+                <label for="user__name">Behörigheter</label>
+                <div class="user__checkbox__group__item">
+                    <input type="checkbox" id="user__name" name="user__name" placeholder="Namn">
+                    <label for="user__name">Huvudadministratör</label>
+                </div>
+                <div class="user__checkbox__group__item">
+                    <input type="checkbox" id="user__name" name="user__name" placeholder="Namn">
+                    <label for="user__name">Företagsadministratör</label>
+                </div>
+                <div class="user__checkbox__group__item">
+                    <input type="checkbox" id="user__name" name="user__name" placeholder="Namn">
+                    <label for="user__name">Systemadministratör</label>
+                </div>
+                <div class="user__checkbox__group__item">
+                    <input type="checkbox" id="user__name" name="user__name" placeholder="Namn">
+                    <label for="user__name">Bärgare</label>
+                </div>
+                <div class="user__checkbox__group__item">
+                    <input type="checkbox" id="user__name" name="user__name" placeholder="Namn">
+                    <label for="user__name">Ekonomi</label>
+                </div>
+                <div class="user__checkbox__group__item">
+                    <input type="checkbox" id="user__name" name="user__name" placeholder="Namn">
+                    <label for="user__name">Dirigering</label>
+                </div>
+                <div class="user__checkbox__group__item">
+                    <input type="checkbox" id="user__name" name="user__name" placeholder="Namn">
+                    <label for="user__name">Bärgning Koodrinator</label>
+                </div>
+                <div class="user__checkbox__group__item">
+                    <input type="checkbox" id="user__name" name="user__name" placeholder="Namn">
+                    <label for="user__name">Register</label>
+                </div>
+                <div class="user__checkbox__group__item">
+                    <input type="checkbox" id="user__name" name="user__name" placeholder="Namn">
+                    <label for="user__name">Extern beställare</label>
+            </div>
+
+            <div clasS="user__checkbox__group">
+                <label for="user__name">Funktionalitet</label>
+                <div class="user__checkbox__group__item">
+                    <input type="checkbox" id="user__name" name="user__name" placeholder="Namn">
+                    <label for="user__name">Multitransport</label>
+                </div>
+                <div class="user__checkbox__group__item">
+                    <input type="checkbox" id="user__name" name="user__name" placeholder="Namn">
+                    <label for="user__name">TMA</label>
+                </div>
+                <div class="user__checkbox__group__item">
+                    <input type="checkbox" id="user__name" name="user__name" placeholder="Namn">
+                    <label for="user__name">Bärgning</label>
+                </div>
+            </div>
+
+
+                
+        </dialog>
+          
+   </div>

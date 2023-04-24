@@ -589,6 +589,39 @@ dialog::backdrop {
 
 
 /* //Login */
+/* 
+<div class="login__wrapper">
+
+<div class="login__floating__frame">
+    <div class="frame__two__cols">
+        <div class="login__news__col">
+            Nyheter:
+
+        </div>
+        <div class="login__form__col">
+            <img src="placeholder.jpg" class="login__logo"/>
+            <h1>Logga in</h1>
+
+            <form>
+                <div class="form__field__group">
+                    <label for="username">Användarnamn</label>
+                    <input type="text" placeholder="Användarnamn" />
+                </div>
+                <div class="form__field__group">
+                    <label for="password">Lösenord</label>
+                    <input type="password" placeholder="Lösenord" />
+
+                </div>
+                <input type="submit" class="login__button" value="Logga in" />
+            </form>
+
+            <p class="login__forgot__password">Glömt lösenord?</p>
+            <p class="login__small__heading"> Ny här?</p>
+            <p class="login__small__text">Kontakta oss för att få ett konto.</p>
+        </div>
+    </div>
+</div> */
+
 
 .login__wrapper {
 
@@ -597,17 +630,25 @@ dialog::backdrop {
   align-items: center;
   justify-content: center;
   height: 100vh;
+  background: linear-gradient(45deg, #299874, #0045c0);
+}
+
+.login__news__background {
+  width: 100%;
+  height: 100%;
+  object-fit:cover;
 }
 
 .login__floating__frame {
   box-shadow: 1px 1px 10px 1px rgba(0,0,0,0.2);
   border-radius: 5px;
   padding: 1rem;
-  
+  background-color: white;
 }
 
 .frame__two__cols {
   display: grid;
+  max-width: 700px;
   grid-template-columns: 1fr 1fr;
   grid-template-areas:
     "col1 col2";
@@ -617,8 +658,359 @@ dialog::backdrop {
 
 .login__news__col {
   grid-area: col1;
+  height: 100%;
+  
 }
 
 .login__form__col {
   grid-area: col2;
 }
+
+.login__logo {
+  width: 100px;
+  height: auto;
+  margin-bottom: 1rem;
+}
+
+.login__form__col h1 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.login__form__col form {
+  display: flex;
+  flex-direction: column;
+}
+
+.login__form__col form input {
+  margin-bottom: 1rem;
+  padding: .5rem;
+  border: 1px solid var(--bx2-gray);
+  border-radius: 5px;
+}
+
+.login__form__col form input[type="submit"]
+{
+  background-color: var(--bx2-green);
+  color: white;
+  border: none;
+  padding: 1rem;
+  border-radius: 5px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  
+}
+
+.form__field__group input[type="password"],
+.form__field__group input[type="text"] {
+  font-size: 1rem;
+  padding: .2rem .5rem;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  color: var(--bx2-gray);
+}
+
+.form__field__group {
+  display: flex;
+  flex-direction: column;
+}
+
+.login__forgot__password {
+  font-size: .8rem;
+  color: var(--bx2-blue);
+  margin-bottom: 1rem;
+}
+
+.login__small__heading {
+  font-size: .8rem;
+  font-weight: 600;
+  margin-bottom: 0px;
+}
+
+.login__small__text {
+  font-size: .8rem;
+  color: var(--bx2-gray);
+  margin-top: 0px;
+}
+
+/* Användarhantering */
+/* 
+
+<div class="user__settings__wrapper">
+<h2>Användarinställningar</h2>
+<h3> Bärgarna AB</h3>
+    <div class="user__list">
+        <div class="user__list__row">
+            <p class="user__list__data">
+                <span class="user__list__taxonomy">Användarnamn </span>
+                <span class="user__list__value">stefan@grafikcentralen.se</span>
+            </p>
+            
+            <p class="user__list__data">
+                <span class="user__list__taxonomy">Namn </span>
+                <span class="user__list__value">Stefan Jakobsson</span>
+            </p>
+
+            <p class="user__list__action"> Redigera </p>
+            <p class="user__list__action"> Ta bort </p>
+        </div>
+    </div>
+
+    <div class="user__list">
+        <div class="user__list__row">
+            <p class="user__list__data">
+                <span class="user__list__taxonomy">Användarnamn </span>
+                <span class="user__list__value">stefan@grafikcentralen.se</span>
+            </p>
+            
+            <p class="user__list__data">
+                <span class="user__list__taxonomy">Namn </span>
+                <span class="user__list__value">Stefan Jakobsson</span>
+            </p>
+
+            <p class="user__list__action"> Redigera </p>
+            <p class="user__list__action"> Ta bort </p>
+        </div>
+    </div>
+
+    <div class="user__list">
+        <div class="user__list__row">
+            <p class="user__list__data">
+                <span class="user__list__taxonomy">Användarnamn </span>
+                <span class="user__list__value">stefan@grafikcentralen.se</span>
+            </p>
+            
+            <p class="user__list__data">
+                <span class="user__list__taxonomy">Namn </span>
+                <span class="user__list__value">Stefan Jakobsson</span>
+            </p>
+
+            <p class="user__list__action"> Redigera </p>
+            <p class="user__list__action"> Ta bort </p>
+        </div>
+    </div>
+
+
+
+    <button class="user__list__add__button">Lägg till användare</button>
+    
+
+  
+      
+</div> */
+
+.user__settings__wrapper {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.user__settings__wrapper h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+
+.user__list {
+  box-shadow: 2px 3px 3px 1px rgb(0 0 0 / 12%);
+
+}
+
+
+.user__list__row {
+  
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+
+
+.user__list__row:nth-child(even) {
+  background-color: #f0f0f0;
+}
+
+.user__list__row:nth-child(odd) {
+  background-color: #e0e0e0;
+ 
+}
+
+.user__list__data {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+}
+
+
+.user__list__taxonomy {
+  font-size: .8rem;
+  color: var(--bx2-gray);
+  margin: 0;
+}
+
+.user__list__value {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.user__list__action {
+  font-size: .8rem;
+  color: var(--bx2-blue);
+  cursor: pointer;
+}
+
+.user__list__add__button {
+  background-color: var(--bx2-green);
+  color: white;
+  border: none;
+  padding: 1rem;
+  border-radius: 5px;
+  font-weight: 600;
+  font-size: 1rem;
+  margin-top: 1rem;
+  cursor: pointer;
+  margin-bottom: 1rem;
+}
+/* 
+<div class="associate__list"> 
+    
+  
+<div class="associate__list__row">
+    <img src="placeholder.jpg" class="associate__list__row__logo"/>
+    <p class="associate__list__row__taxonomy"> Företag</p>
+    <p class="accociate__list__row__value"> Bärgning AB</p>
+    <p class="associate__list__row__taxonomy"> Tjänst</p>
+    <p class="accociate__list__row__value"> Bärgning</p>
+    <p class="associate__list__row__taxonomy"> Telefon</p>
+    <p class="accociate__list__row__value"> 076 880 45 45</p>
+    <p class="associate__list__row__taxonomy"> E-post</p>
+    <p class="accociate__list__row__value">info@bargningab.se</p>
+    <img src="placeholder.jpg" class="associate__add__button"/>
+</div>
+<div class="associate__list__row">
+    <img src="placeholder.jpg" class="associate__list__row__logo"/>
+    <p class="associate__list__row__taxonomy"> Företag</p>
+    <p class="accociate__list__row__value"> Bärgning AB</p>
+    <p class="associate__list__row__taxonomy"> Tjänst</p>
+    <p class="accociate__list__row__value"> Bärgning</p>
+    <p class="associate__list__row__taxonomy"> Telefon</p>
+    <p class="accociate__list__row__value"> 076 880 45 45</p>
+    <p class="associate__list__row__taxonomy"> E-post</p>
+    <p class="accociate__list__row__value">info@bargningab.se</p>
+    <img src="placeholder.jpg" class="associate__add__button"/>
+</div>
+<div class="associate__list__row">
+    <img src="placeholder.jpg" class="associate__list__row__logo"/>
+    <p class="associate__list__row__taxonomy"> Företag</p>
+    <p class="accociate__list__row__value"> Bärgning AB</p>
+    <p class="associate__list__row__taxonomy"> Tjänst</p>
+    <p class="accociate__list__row__value"> Bärgning</p>
+    <p class="associate__list__row__taxonomy"> Telefon</p>
+    <p class="accociate__list__row__value"> 076 880 45 45</p>
+    <p class="associate__list__row__taxonomy"> E-post</p>
+    <p class="accociate__list__row__value">info@bargningab.se</p>
+    <img src="placeholder.jpg" class="associate__add__button"/>
+</div>
+
+</div> */
+
+
+.associate__manager__wrapper {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.associate__list {
+  box-shadow: 2px 3px 3px 1px rgb(0 0 0 / 12%);
+  margin-bottom: 1rem;
+}
+
+.associate__list__row {
+ display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas: 
+    "logo company service phone add"
+    "logo email email email add";
+}
+
+.associate__list__row__logo {
+  grid-area: logo;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 1rem;
+}
+
+.associate__list__row__taxonomy {
+  font-size: .8rem;
+  color: var(--bx2-gray);
+  margin: 0;
+}
+
+.associate__list__row__value {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.associate__list__row__company {
+  grid-area: company;
+}
+
+.associate__list__row__service {
+  grid-area: service;
+}
+
+.associate__list__row__phone {
+  grid-area: phone;
+}
+
+.associate__list__row__email {
+  grid-area: email;
+}
+
+.associate__list__row__add {
+  grid-area: add;
+  justify-self: end;
+}
+
+.associate__list__row:nth-child(even) {
+  background-color: #f0f0f0;
+}
+
+.associate__list__row:nth-child(odd) {
+  background-color: #e0e0e0;
+ 
+}
+
+.associate__add__button {
+  background-color: var(--bx2-green);
+  color: white;
+  border: none;
+  padding: 1rem;
+  border-radius: 5px;
+  font-weight: 600;
+  height: 50px;
+  width: 50px;
+  font-size: 1rem;
+  margin-top: 1rem;
+  cursor: pointer;
+  margin-bottom: 1rem;
+}
+
+.associate__list__add__button:hover {
+  background-color: var(--bx2-green-hover);
+}
+
+.associate__list__add__button:active {
+  background-color: var(--bx2-green-active);
+}
+
+.associate__list__add__button:focus {
+  outline: none;
+}
+
+
