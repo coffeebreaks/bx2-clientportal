@@ -1,0 +1,205 @@
+<div class="create__order__wrapper">
+
+    <div class="form__step" id="form-step-1">
+        <h2>Beställaruppgifter</h2>
+        <div class="form__two__cols">
+
+            <div class="form__group">
+                <label for="order__name">Beställare</label>
+                <input type="text" id="order__name" name="order__name" placeholder="Ditt namn eller företag">
+            </div>
+            <div class="form__group">
+                <label for="order__name">Telefon, beställare</label>
+                <input type="text" id="order__name" name="order__name" placeholder="+46 70 000 00 00">
+            </div>
+            <div class="form__group">
+                <label for="order__name">Telefon på plats</label>
+                <input type="text" id="order__name" name="order__name" placeholder="+46 70 000 00 00">
+            </div>
+            <div class="form__group">
+                <label for="order__name">Referens/Larmnummer</label>
+                <input type="text" id="order__name" name="order__name" placeholder="">
+            </div>
+            <div class="form__group span-2">
+                <label for="order__name">Meddelande till bärgare</label>
+                <textarea id="order__name" name="order__name" placeholder="Ex: Andra grinden till höger.."></textarea>
+            </div>
+           
+            
+            
+            <div class="form__one__col">
+                
+                <div class="form__group">
+                    <label for="order__name">Hämtas tidigast</label>
+                    <input type="date" id="order__name" name="order__name" placeholder="">
+                    Lämnas tidigast
+                    <input type="date" id="order__name" name="order__name" placeholder="">
+                    
+                </div>
+            </div>
+            
+        </div>
+        <button onClick="
+        document.getElementById('form-step-1').style.display = 'none'
+        document.getElementById('form-step-2').style.display = 'block'
+        " class="button__next__step">Lägg till upphämtning</button>
+    </div>
+    
+    
+<div class="form__step" id="form-step-2">
+    <h2>Upphämtningsplats</h2>
+
+    <div class="form__two__cols">
+        <div class="form__group">
+            <label for="order__name">Upphämtningsplats</label>
+            <input type="text" id="order__name" name="order__name" placeholder="Adress">
+        </div>
+        <div class="form__group">
+            <label for="order__name">Upphämtningsplats, telefon</label>
+            <input type="text" id="order__name" name="order__name" placeholder="+46 76 00 00 00">
+        </div>
+    </div>
+
+    <div class="form__one__col">
+        <div class="form__group">
+            <label for="order__name">Upphämtningsplats, övrigt</label>
+            <textarea type="text" id="order__name" name="order__name" placeholder="Ex: Andra grinden till höger.."></textarea>
+        </div>
+    </div>
+    <button onClick="
+    document.getElementById('form-step-2').style.display = 'none'
+    document.getElementById('form-step-3').style.display = 'block'
+    " class="button__next__step">Lägg till destination</button>
+</div>
+
+<div class="form__step" id="form-step-3">
+    <h2>Ange destination</h2>
+
+    <div class="form__two__cols">
+        <div class="form__group">
+            <label for="order__name">Destination</label>
+            <input type="text" id="order__name" name="order__name" placeholder="Adress">
+        </div>
+        <div class="form__group">
+            <label for="order__name">Destination, telefon</label>
+            <input type="text" id="order__name" name="order__name" placeholder="+46 76 00 00 00">
+        </div>
+    </div>
+
+    <div class="form__one__col">
+        <div class="form__group">
+            <img src="placeholder.jpg" class="map__placeholder"/>
+        </div>
+    </div>
+    <button onClick="
+    document.getElementById('form-step-3').style.display = 'none'
+    document.getElementById('form-step-4').style.display = 'block'
+    " class="button__next__step">Ladda upp foto</button>
+</div>
+
+<div class="form__step" id="form-step-4">
+    <h2> Lägg till foto</h2>
+    <div class="photo__col">
+        <div class="photo__button"><img src="placeholder.jpg"></div>
+        <div class="form__group">
+            <label for="order__name">Kommentar</label>
+            <textarea class="photo__description" placeholder="Ex: Höjd 2.8"></textarea>
+        </div>
+    </div>
+    <button onClick="
+    document.getElementById('form-step-4').style.display = 'none'
+    document.getElementById('form-step-5').style.display = 'block'
+    " class="button__next__step">Välj leverantör</button>
+</div>
+
+<div class="form__step" id="form-step-5">
+    <h2> Välj leverantör</h2>
+    <div class="supplier__rows__wrapper">
+
+        <div class="supplier__row">
+            <img src="placeholder.jpg" class="supplier__logo"/>
+            <h2 class="supplier__title"> Bärgningstjänsten</h2>
+            <p class="supplier__distance">2 km bort</p>
+            <a href="#" class="supplier__phone">Ring</a>
+            <a href="#" class="supplier__email">Maila</a>
+            <img src="placeholder.jpg" class="supplier__select"/>
+        </div>
+
+        <div class="supplier__row">
+            <img src="placeholder.jpg" class="supplier__logo"/>
+            <h2 class="supplier__title"> Bärgningstjänsten</h2>
+            <p class="supplier__distance">2 km bort</p>
+            <a href="#" class="supplier__phone">Ring</a>
+            <a href="#" class="supplier__email">Maila</a>
+            <img src="placeholder.jpg" class="supplier__select"/>
+        </div>
+        
+        <div class="supplier__row">
+            <img src="placeholder.jpg" class="supplier__logo"/>
+            <h2 class="supplier__title"> Bärgningstjänsten</h2>
+            <p class="supplier__distance">2 km bort</p>
+            <a href="#" class="supplier__phone">Ring</a>
+            <a href="#" class="supplier__email">Maila</a>
+            <img src="placeholder.jpg" class="supplier__select"/>
+        </div>
+
+        
+
+    </div>
+    <button onClick="
+    document.getElementById('form-step-5').style.display = 'none'
+    document.getElementById('form-step-6').style.display = 'block'
+    " class="button__next__step">Granska beställning</button>
+</div>
+
+<div class="form__step" id="form-step-6">
+    <h2> Sammanfattning</h2>
+    <div class="summary__wrapper">
+        <div class="three__cols">
+            <div class="summary__part">
+                <p class="summary__title">Beställare</p>
+                <p class="summary__data">Stefan Jakobsson</p>
+                <p class="summary__title">Telefon, beställare</p>
+                <p class="summary__data">076 880 45 45 </p>
+                <p class="summary__title">Telefon på plats</p>
+                <p class="summary__data">076 880 45 45 </p>
+                <p class="summary__title">Referense/Larmnummer</p>
+                <p class="summary__data">123123 121231 </p>
+                <p class="summary__title">Meddelande till bärgare</p>
+                <p class="summary__data">Första grinden till höge... </p>
+            </div>
+            
+            <div class="summary__part">
+                <p class="summary__title">Hämstas tidigast</p>
+                <p class="summary__data">2023-06-11 07:30</p>
+                <p class="summary__title">Lämnas tidigast</p>
+                <p class="summary__data">2023-06-11 07:30 </p>
+                <p class="summary__title">Upphämtningsplats</p>
+                <p class="summary__data">Sveavägen 1, Stock... </p>
+                <p class="summary__title">Upphämtningsplats, telefon</p>
+                <p class="summary__data">076 880 45 45  </p>
+                <p class="summary__title">Beskrivning Upphämtningsplats</p>
+                <p class="summary__data">Plats 32, vänster om södra port...</p>
+            </div>
+
+            <div class="summary__part">
+                <p class="summary__title">Destination</p>
+                <p class="summary__data">Sveavägen 1, Stock... </p>
+                <p class="summary__title">Destination, telefon</p>
+                <p class="summary__data">076 880 45 45  </p>    
+                <p class="summary__title"> Leverantör</p>
+                <p class="summary__data">Bärgningstjänsten</p>
+            </div>
+
+            <hr>
+        </div>
+
+    </div>
+    <button style="display: inherit" onClick="
+    document.getElementById('form-step-5').style.display = 'none'
+    document.getElementById('form-step-6').style.display = 'block'
+    " class="button__next__step">BESTÄLL</button>
+</div>
+</div>
+   
+</div>
