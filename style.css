@@ -9,6 +9,7 @@ body {
     --bx2-blue: #007bff;
     --bx2-green: #28a745;
     --bx2-lightgray: #eeeeee;
+    --bx2-lightgray2: #cecece;
     --bx2-red: #dc3545;
     --bx2-yellow: #ffc107;
     --bx2-orange: #fd7e14;
@@ -22,8 +23,10 @@ body {
 }
 
 .page__logo {
-    width: 100px;
-    height: auto;
+  width: auto;
+  height: 23px;
+  margin: auto 0;
+  padding: 1rem;
 }
 
 .main__nav {
@@ -56,15 +59,16 @@ body {
 }
 
 .user__icon {
-    display: flex;
+  display: flex;
     justify-content: center;
     align-items: center;
-    width: 30px;
-    height: 30px;
+    width: 40px;
+    height: 40px;
     background-color: var(--bx2-blue);
     color: white;
     border-radius: 50%;
     cursor: pointer;
+    line-height: 2px;
     
 }
 
@@ -145,31 +149,43 @@ p.subtitle {
     display: flex;
     flex-direction: column;
     width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.order__info {
+  max-width: 50ch;
 }
 
 
 .current__orders__list {
       margin: 0 auto;
-      /* min-width: 600px; */
+      min-width: 700px;
     flex-direction: column;
     font-size: 1rem;
   }
   
   .orders__row {
-
+    cursor: pointer;
     margin: 0 .5rem;
     display: grid;
-   
     grid-template-columns: auto 1fr 1fr  auto;
     grid-template-rows: auto auto auto;
     grid-template-areas:
-      "usericon title title arrow"
-      "usericon id  id arrow"
-      "usericon type status arrow";
+      "usericon   title   status   arrow"
+      "usericon   id      status      arrow"
+      "usericon   type    status  arrow";
     gap: 5px;
+    padding: 1rem;
     align-items: center;
-    padding: 1rem 0;
-    border-bottom: 1px solid var(--bx2-gray);
+    padding: 1rem 1rem;
+    border-bottom: 1px solid var(--bx2-lightgray);
+  }
+
+  .orders__row:hover {
+    background-color: var(--bx2-lightgray);
+    transform: scale(1.01);
+ 
   }
   
 
@@ -210,13 +226,14 @@ p.subtitle {
   
 .order__row__status {
     grid-area: status;
-    justify-self: flex-end;
+    justify-self: center;
+    align-self: center;
 }
 
   .order__row__arrow {
     grid-area: arrow;
-    width: 20px;
-    height: 20px;
+    width: 40px;
+    height: 40px;
   }
 
   .ongoing {
@@ -241,7 +258,7 @@ dialog::backdrop {
   
   dialog.order__row__details {
     width: 100%;
-    /* max-width: 700px; */
+    max-width: 700px;
     
   }
   
@@ -336,6 +353,15 @@ dialog::backdrop {
   .form__step {
     max-width: 500px;
     margin: 0 auto;
+    /* box-shadow: 6px 5px 11px #afafafc9; */
+    border-radius: 5px;
+    /* border-left: 1px solid var(--bx2-lightgray); */
+    /* border-right: 1px solid var(--bx2-lightgray); */
+    /* border-bottom: 1px solid var(--bx2-lightgray); */
+    border-top: 1px solid var(--bx2-lightgray);
+    
+    padding: 1rem;
+    margin-bottom: 3rem;
   }
 
   button.button__next__step {
@@ -379,7 +405,7 @@ dialog::backdrop {
   }
 
   input[type="text"], textarea, input[type="date"] {
-    border: 1px solid var(--bx2-gray);
+    border: 1px solid var(--bx2-lightgray2);
     border-radius: 5px;
     padding: .5rem;
     font-size: 1rem;
@@ -439,7 +465,7 @@ dialog::backdrop {
 
   .supplier__row {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 2fr 1fr 1fr 1fr;
     grid-template-rows: auto auto auto;
     grid-template-areas:
       "logo title phone email select"
@@ -448,9 +474,17 @@ dialog::backdrop {
     /* gap: 1rem; */
     align-items: center;
     padding: .5rem;
+    cursor: pointer;
 
-    border-bottom: 1px solid var(--bx2-gray);
+    border-bottom: 1px solid var(--bx2-lightgray);
   }
+
+  .supplier__row:hover {
+    background-color: var(--bx2-lightgray);
+    transform: scale(1.01);
+ 
+  }
+  
 
   .supplier__row p, .supplier__row h2, .supplier__row a {
     margin: 0;
@@ -468,6 +502,7 @@ dialog::backdrop {
     grid-area: title;
     font-size: 1.2rem;
     font-weight: 400;
+    text-align: left;
   }
 
   .supplier__phone {
@@ -494,8 +529,8 @@ dialog::backdrop {
 
   .supplier__select {
    grid-area: select;
-   height: 50px;
-   width: 50px;
+   height: 35px;
+    width: 35px;
    justify-self: flex-end;
   }
 
@@ -548,6 +583,7 @@ dialog::backdrop {
   @media (max-width: 500px) {
     .form__step {
      display: none;
+     box-shadow: none;
     }
     #form-step-1 {
       display: block ;
@@ -648,7 +684,7 @@ dialog::backdrop {
 
 .frame__two__cols {
   display: grid;
-  max-width: 700px;
+  max-width: 1100px;
   grid-template-columns: 1fr 1fr;
   grid-template-areas:
     "col1 col2";
@@ -664,17 +700,22 @@ dialog::backdrop {
 
 .login__form__col {
   grid-area: col2;
+  padding: 5rem;
 }
 
 .login__logo {
-  width: 100px;
-  height: auto;
-  margin-bottom: 1rem;
+  width: 262px;
+    text-align: center;
+    display: block;
+    height: auto;
+    margin: 0 auto;
+    margin-bottom: 2rem;
 }
 
-.login__form__col h1 {
+.login__form__col h2 {
   font-size: 1.5rem;
   margin-bottom: 1rem;
+  font-weight: 400;
 }
 
 .login__form__col form {
@@ -833,7 +874,7 @@ dialog::backdrop {
 }
 
 .user__list__row:nth-child(odd) {
-  background-color: #e0e0e0;
+  background-color: #ffffff;
  
 }
 
@@ -916,25 +957,64 @@ dialog::backdrop {
 
 </div> */
 
+/* Associate manager */
 
 .associate__manager__wrapper {
   max-width: 700px;
   margin: 0 auto;
   padding: 1rem;
+  color: var(--bx2-gray);
 }
 
 .associate__list {
   box-shadow: 2px 3px 3px 1px rgb(0 0 0 / 12%);
   margin-bottom: 1rem;
+  border-radius: 5px;
+  margin-bottom: 3rem; 
 }
 
 .associate__list__row {
  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+ grid-template-columns: 1fr 3fr 1fr 1fr 2fr 1fr;
   grid-template-rows: 1fr 1fr;
   grid-template-areas: 
-    "logo company service phone add"
-    "logo email email email add";
+    "logo   company   email   phone   status  add"
+    "logo   type      email   phone   status  add";
+
+      border-bottom: 1px solid var(--bx2-lightgray);
+}
+
+.associate__list__row__status {
+  grid-area: status;
+  font-size: 1rem;
+  font-weight: 200;
+  color: inherit;
+  margin: 0;
+  align-self: center;
+  margin: 0;
+  padding: 0px;
+  border-radius: 5px;
+  color: white;
+  font-size: .8rem;
+  
+  text-align: center;
+  padding: .1rem 1rem;
+}
+
+.associate__status__green {
+  background-color: var(--bx2-green);
+}
+
+.associate__status__yellow {
+  background-color: var(--bx2-orange);
+}
+
+.associate__list__row__delete {
+  color: var(--bx2-red);
+  cursor: pointer;
+  grid-area: delete;
+  text-decoration: underline;
+  margin: 0;
 }
 
 .associate__list__row__logo {
@@ -943,6 +1023,8 @@ dialog::backdrop {
   height: 50px;
   border-radius: 50%;
   margin-right: 1rem;
+  align-self: center;
+  margin: .5rem;
 }
 
 .associate__list__row__taxonomy {
@@ -958,48 +1040,54 @@ dialog::backdrop {
 
 .associate__list__row__company {
   grid-area: company;
+  font-size: 1.1rem;
+  font-weight: 600;
+  align-self: flex-end;
+  margin: 0;
 }
 
-.associate__list__row__service {
-  grid-area: service;
+.associate__list__row__type {
+  grid-area: type;
+  align-self: flex-start;
+  margin: 0;
 }
 
 .associate__list__row__phone {
   grid-area: phone;
+  align-self: center;
+  color: var(--bx2-blue);
 }
 
 .associate__list__row__email {
   grid-area: email;
+  align-self: center;
+  color: var(--bx2-blue);
 }
 
 .associate__list__row__add {
   grid-area: add;
   justify-self: end;
+  color: white;
+  border: none;
+  padding: 1rem;
+  border-radius: 5px;
+  font-weight: 600;
+  height: 30px;
+  width: 30px;
+  font-size: 1rem;
+  cursor: pointer;
 }
 
-.associate__list__row:nth-child(even) {
+/* .associate__list__row:nth-child(even) {
   background-color: #f0f0f0;
 }
 
 .associate__list__row:nth-child(odd) {
   background-color: #e0e0e0;
  
-}
+} */
 
-.associate__add__button {
-  background-color: var(--bx2-green);
-  color: white;
-  border: none;
-  padding: 1rem;
-  border-radius: 5px;
-  font-weight: 600;
-  height: 50px;
-  width: 50px;
-  font-size: 1rem;
-  margin-top: 1rem;
-  cursor: pointer;
-  margin-bottom: 1rem;
-}
+
 
 .associate__list__add__button:hover {
   background-color: var(--bx2-green-hover);
@@ -1014,3 +1102,6 @@ dialog::backdrop {
 }
 
 
+p, h1, h2, h3 {
+  color: var(--bx2-gray)
+}
