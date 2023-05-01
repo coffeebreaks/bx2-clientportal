@@ -1,28 +1,34 @@
 <div class="create__order__wrapper">
 
     <div class="form__step" id="form-step-1">
-        <h2>Beställaruppgifter</h2>
+
+        <div class="form__step__header">
+            <div class="form__step__number">1</div>
+            <h2>Beställaruppgifter</h2>
+        </div>
+        <order-step-nav></order-step-nav>
+            
         <div class="form__two__cols">
 
             <div class="form__group">
                 <label for="order__name">Beställare</label>
-                <input type="text" id="order__name" name="order__name" placeholder="Ditt namn eller företag">
+                <input class="form__icon" style="background-image: url('icons/blue/team.png');" type="text" id="order__name" name="order__name" placeholder="Ditt namn eller företag">
             </div>
             <div class="form__group">
                 <label for="order__name">Telefon, beställare</label>
-                <input type="text" id="order__name" name="order__name" placeholder="+46 70 000 00 00">
+                <input class="form__icon" style="background-image: url('icons/blue/phone.png');" type="text" id="order__name" name="order__name" placeholder="+46 70 000 00 00">
             </div>
             <div class="form__group">
                 <label for="order__name">Telefon på plats</label>
-                <input type="text" id="order__name" name="order__name" placeholder="+46 70 000 00 00">
+                <input class="form__icon" style="background-image: url('icons/blue/phone.png');" type="text" id="order__name" name="order__name" placeholder="+46 70 000 00 00">
             </div>
             <div class="form__group">
                 <label for="order__name">Referens/Larmnummer</label>
-                <input type="text" id="order__name" name="order__name" placeholder="">
+                <input class="form__icon" style="background-image: url('icons/blue/hash.png');" type="text" id="order__name" name="order__name" placeholder="">
             </div>
             <div class="form__group span-2">
                 <label for="order__name">Meddelande till bärgare</label>
-                <textarea id="order__name" name="order__name" placeholder="Ex: Andra grinden till höger.."></textarea>
+                <textarea class="textarea__icon" style="background-image: url('icons/blue/message.png');" id="order__name" name="order__name" placeholder="Ex: Andra grinden till höger.."></textarea>
             </div>
            
             
@@ -47,8 +53,10 @@
     
     
 <div class="form__step" id="form-step-2">
-    <h2>Upphämtningsplats</h2>
-
+    <div class="form__step__header">
+        <div class="form__step__number">2</div>
+        <h2>Upphämtningsplats</h2>
+    </div>
     <div class="form__two__cols">
         <div class="form__group">
             <label for="order__name">Upphämtningsplats</label>
@@ -73,7 +81,10 @@
 </div>
 
 <div class="form__step" id="form-step-3">
-    <h2>Ange destination</h2>
+    <div class="form__step__header">
+        <div class="form__step__number">3</div>
+        <h2>Destination</h2>
+    </div>
 
     <div class="form__two__cols">
         <div class="form__group">
@@ -98,7 +109,10 @@
 </div>
 
 <div class="form__step" id="form-step-4">
-    <h2> Lägg till foto</h2>
+    <div class="form__step__header">
+        <div class="form__step__number">4</div>
+        <h2>Foto</h2>
+    </div>
     <div class="photo__col">
         <div class="photo__button"><img src="placeholder.jpg"></div>
         <div class="form__group">
@@ -113,7 +127,10 @@
 </div>
 
 <div class="form__step" id="form-step-5">
-    <h2> Välj leverantör</h2>
+    <div class="form__step__header">
+        <div class="form__step__number">5</div>
+        <h2>Välj leverantör</h2>
+    </div>
     <div class="supplier__rows__wrapper">
 
         <div class="supplier__row">
@@ -153,7 +170,10 @@
 </div>
 
 <div class="form__step" id="form-step-6">
-    <h2> Sammanfattning</h2>
+    <div class="form__step__header">
+        <div class="form__step__number">6</div>
+        <h2>Sammanfattning</h2>
+    </div>
     <div class="summary__wrapper">
         <div class="three__cols">
             <div class="summary__part">

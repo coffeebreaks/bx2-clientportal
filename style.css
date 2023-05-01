@@ -1,15 +1,16 @@
 body {
     margin: 0;
-    /* background: gray; */
-    min-width: 32   0px;
+
+    min-width: 370px;
 }
 
 :root {
     --bx2-gray: #333333;
-    --bx2-blue: #007bff;
+    /* --bx2-blue: #007bff; */
+    --bx2-blue: rgb(18 149 211) ;
     --bx2-green: #28a745;
     --bx2-lightgray: #eeeeee;
-    --bx2-lightgray2: #cecece;
+    --bx2-lightgray2: #4e4e4e;
     --bx2-red: #dc3545;
     --bx2-yellow: #ffc107;
     --bx2-orange: #fd7e14;
@@ -20,6 +21,10 @@ body {
     display: flex;
     /* justify-content: space-between; */
     background-color: white;
+    position: sticky;
+    top: 0px;
+    z-index: 999;
+    
 }
 
 .page__logo {
@@ -27,6 +32,13 @@ body {
   height: 23px;
   margin: auto 0;
   padding: 1rem;
+}
+
+@media(max-width: 500px){
+  .page__logo {
+
+    height: 19px;
+  }
 }
 
 .main__nav {
@@ -71,6 +83,26 @@ body {
     line-height: 2px;
     
 }
+
+@media(max-width: 500px) {
+  .user__icon {
+   display: none;
+  }
+
+  .mobile__menu__hamburger__icon {
+    display:block;
+  }
+
+}
+
+.mobile__menu__hamburger__icon {
+  height: 45px;
+  width: auto;
+  margin-left: auto;
+  padding: 0.4rem 1rem;
+}
+
+
 
 .user__nav__dropdown {
     position: absolute;
@@ -149,6 +181,8 @@ p.subtitle {
     display: flex;
     flex-direction: column;
     width: 100%;
+    padding: 1rem;
+    box-sizing: border-box;
     justify-content: center;
     align-items: center;
 }
@@ -159,27 +193,47 @@ p.subtitle {
 
 
 .current__orders__list {
-      margin: 0 auto;
-      min-width: 700px;
+    margin: 0 auto;
+    width: min(700px, 100%);
     flex-direction: column;
     font-size: 1rem;
   }
+
+  /* @media(max-width: 700px){
+    .current__orders__list {
+      min-width: 100%;
+    }
+  } */
   
   .orders__row {
     cursor: pointer;
     margin: 0 .5rem;
     display: grid;
-    grid-template-columns: auto 1fr 1fr  auto;
+    grid-template-columns: auto 1fr 1fr  1fr;
     grid-template-rows: auto auto auto;
     grid-template-areas:
       "usericon   title   status   arrow"
       "usericon   id      status      arrow"
       "usericon   type    status  arrow";
     gap: 5px;
-    padding: 1rem;
+    padding: 1rem 0;
     align-items: center;
-    padding: 1rem 1rem;
+    
     border-bottom: 1px solid var(--bx2-lightgray);
+  }
+
+  @media(max-width: 500px){
+    .orders__row {
+      padding: .5rem;
+      grid-template-columns: 60px 1fr 60px ; 
+
+      grid-template-areas:
+        "usericon   title     title"
+        "usericon       title      title"
+        "usericon       id       arrow"
+        "usericon       type       arrow"
+        "usericon status status";
+    }
   }
 
   .orders__row:hover {
@@ -196,6 +250,7 @@ p.subtitle {
     margin-right: 1rem;
     height: 50px;
     object-fit: cover;
+    grid-row-start: 1;
   }
   
 
@@ -229,11 +284,17 @@ p.subtitle {
     justify-self: center;
     align-self: center;
 }
+@media(max-width: 500px){
+  .order__row__status {
+    justify-self: start;
+  }
+}
 
   .order__row__arrow {
     grid-area: arrow;
     width: 40px;
     height: 40px;
+    justify-self: end;
   }
 
   .ongoing {
@@ -257,9 +318,7 @@ dialog::backdrop {
   }
   
   dialog.order__row__details {
-    width: 100%;
-    max-width: 700px;
-    
+    width: min(700px, 100%);
   }
   
   .row__details__heading {
@@ -360,8 +419,8 @@ dialog::backdrop {
     /* border-bottom: 1px solid var(--bx2-lightgray); */
     border-top: 1px solid var(--bx2-lightgray);
     
-    padding: 1rem;
-    margin-bottom: 3rem;
+    padding: 0 1rem;
+    /* margin-bottom: 3rem; */
   }
 
   button.button__next__step {
@@ -395,9 +454,22 @@ dialog::backdrop {
   .form__group {
     display: flex;
     flex-direction: column;
-    
+    position: relative;
     padding:0  1rem;
+    
   }
+
+  .form__group input[type="text"], .form__group textarea, .form__group input[type="date"] {
+    border-radius: 0px;
+     outline: none;
+  
+   }
+
+  .form__group input[type="text"]:focus, .form__group textarea:focus{
+
+     outline: none;
+     border-color: var(--bx2-blue);
+   }
 
   label {
     font-size: 0.8rem;
@@ -413,6 +485,12 @@ dialog::backdrop {
     width: 100%;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     
+  }
+
+  input[type="text"]::placeholder {
+    color: rgb(177, 177, 177);
+   
+   
   }
 
   textarea {
@@ -578,6 +656,28 @@ dialog::backdrop {
 
   .summary__part {
     align-self: start;
+  }
+
+  .form__step__header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    border-bottom: 1px solid var(--bx2-lightgray);
+  }
+
+  .form__step__number {
+    background-color: var(--bx2-blue);
+    color: white;
+    padding: .7rem;
+    height: 15px;
+    display: flex;
+    margin-right: .5rem;
+    font-size: 1.2rem;
+    justify-content: center;
+    align-items: center;
+    width: 15px;
+    border-radius: 50%;
   }
 
   @media (max-width: 500px) {
@@ -749,7 +849,10 @@ dialog::backdrop {
   padding: .2rem .5rem;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   color: var(--bx2-gray);
+  
 }
+
+
 
 .form__field__group {
   display: flex;
@@ -1105,3 +1208,122 @@ dialog::backdrop {
 p, h1, h2, h3 {
   color: var(--bx2-gray)
 }
+
+#mobile-menu {
+  max-width: 100%;
+  max-height: 100%;
+  height: 100%;
+  width: 100%;
+  padding: 1rem;
+  margin: 0;
+  box-sizing: border-box;
+
+}
+
+.mobile__menu__icon {
+  width: 180px;
+  height: auto;
+}
+
+.mobile__menu__top {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0;
+  margin-bottom: 1rem;
+
+}
+
+.mobile__menu__close {
+  width: 30px;
+  height: auto;
+
+}
+
+.mobile__info__name {
+  font-size: 1rem;
+  font-weight: 500;
+  margin: 0;
+  padding: 0;
+  color: var(--bx2-blue);
+}
+
+.user__info {
+  margin: 1rem 0;
+  text-align: center;
+}
+
+.mobile__info__usertype {
+  font-size: 1rem;
+  font-weight: 400;
+  margin: 0;
+  padding: 0;
+  color: var(--bx2-gray);
+}
+
+.mobile__menu__nav {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  color: var(--bx2-gray);
+}
+
+.nav__row {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 1.5em;
+  font-weight: 400;
+  color: var(--bx2-gray);
+}
+
+.nav__row:hover {
+  color: var(--bx2-blue);
+}
+
+hr {
+  border: 1px solid var(--bx2-lightgray);
+  margin: 0;
+  padding: 0;
+}
+
+
+
+
+/* 
+<dialog id="mobile-menu">
+    <img src="img/pagelogo.png" class="mobile__menu__icon">
+    <img src="icons/red/delete.png" class="mobile__menu__close">
+    <div class="user__info">
+        <div class="user__info__name"> Stefan Jakobsson</div>
+        <div class="user__info__usertype">Administratör</div>
+    </div>
+
+
+    <div class="mobile__menu__nav">
+        <div class="nav__row">Ny beställning</div>
+        <div class="nav__row">Pågående beställningar</div>
+        <div class="nav__row">Ordershitorik</div>
+        <div class="nav__row">Leverantörer</div>
+        <hr>
+        <div class="nav__row">Dina uppgifter</div>
+        <div class="nav__row">Användare</div>
+        <hr>
+        <div class="nav__row">Support</div>
+        <div class="nav__row">Logga ut</div>
+    </div>
+</dialog> */
+
+.form__icon {
+  background-size: 15px !important;
+  background-repeat: no-repeat !important;
+  background-position: 9px center !important;
+  padding-left: 30px !important;
+}
+
+.textarea__icon {
+  background-size: 18px !important;
+  background-repeat: no-repeat !important;
+  background-position: 9px 11px !important;
+  padding-left: 30px !important;
+}
+
