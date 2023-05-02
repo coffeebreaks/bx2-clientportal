@@ -3,7 +3,7 @@ class MobileMenu extends HTMLElement {
     
     constructor(){
     super()
-    fetch("mobileMenu.html")
+    fetch("./components/mobileMenu.html")
     .then((response) => response.text())
     .then((html) => {
         const template = document.createElement("template")
@@ -14,7 +14,7 @@ class MobileMenu extends HTMLElement {
         console.error("Error loading HTML file:", error)
     })
 
-    fetch("mobileMenu.css")
+    fetch("./components/mobileMenu.css")
     .then((response) => response.text())
     .then((css) => {
         const style = document.createElement("style")

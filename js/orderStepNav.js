@@ -2,7 +2,7 @@ export class OrderStepNav extends HTMLElement {
     constructor() {
       super();
   
-      fetch("orderStepNav.html")
+      fetch("./components/orderStepNav.html")
         .then((response) => response.text())
         .then((html) => {
           const template = document.createElement("template");

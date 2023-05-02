@@ -1327,3 +1327,37 @@ hr {
   padding-left: 30px !important;
 }
 
+.step__nav__wrapper {
+  display: flex; 
+  position: relative;
+}
+
+.step__nav__marker {
+     width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    /* background-color: var(--bx2-blue); */
+    margin-right: 1rem;
+    border: 1px solid var(--bx2-blue);
+    background-color: white;
+    z-index: 999;
+}
+
+
+.step__nav__marker::after {
+   content: "";
+    display: block;
+    position: relative;
+    left: 20px;
+    top: 6px;
+    width: 19px;
+    height: 7px;
+    z-index: 100;
+    /* background-color: white; */
+    border: 1px solid var(--bx2-blue);
+    border-right: none;
+    border-left: none;
+}
+.marker__current {
+  background-color: var(--bx2-green);
+}

@@ -2,7 +2,7 @@ export class PlaceOrder extends HTMLElement {
     constructor() {
       super();
   
-      fetch("placeOrder.html")
+      fetch("./components/placeOrder.html")
         .then((response) => response.text())
         .then((html) => {
           const template = document.createElement("template");

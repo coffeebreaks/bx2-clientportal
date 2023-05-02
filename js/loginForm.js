@@ -2,7 +2,7 @@ export class LoginForm extends HTMLElement {
     constructor() {
       super();
   
-      fetch("loginForm.html")
+      fetch("./components/loginForm.html")
         .then((response) => response.text())
         .then((html) => {
           const template = document.createElement("template");

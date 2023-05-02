@@ -2,7 +2,7 @@ export class CurrentOrder extends HTMLElement {
   constructor() {
     super();
 
-    fetch("currentOrder.html")
+    fetch("./components/currentOrder.html")
       .then((response) => response.text())
       .then((html) => {
         const template = document.createElement("template");

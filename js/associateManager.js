@@ -2,7 +2,7 @@ export class AssociateManager extends HTMLElement {
     constructor() {
       super();
   
-      fetch("associateManager.html")
+      fetch("./components/associateManager.html")
         .then((response) => response.text())
         .then((html) => {
           const template = document.createElement("template");

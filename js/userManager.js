@@ -2,7 +2,7 @@ export class UserManager extends HTMLElement {
     constructor() {
       super();
   
-      fetch("userManager.html")
+      fetch("./components/userManager.html")
         .then((response) => response.text())
         .then((html) => {
           const template = document.createElement("template");
