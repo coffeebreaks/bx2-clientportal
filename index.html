@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BX2 - Client portal</title>
     <link rel="stylesheet" href="style.css">
+    <script src="js/eventListerners.js" type="module" defer></script>
     <script  src="js/currentOrder.js" type="module" defer></script>
     <script  src="js/placeOrder.js" type="module" defer></script>
     <script  src="js/loginForm.js" type="module" defer></script>
@@ -13,14 +14,18 @@
     <script src="js/associateManager.js" type="module" defer></script>
     <script src="js/mobileMenu.js" type="module" defer></script>
     <script src="js/orderStepNav.js" type="module" defer></script>
+    <script src="js/landingPage.js" type="module" defer></script>
+ 
 </head>
 <body>
 
 
 
     <div class="top__nav">
-        <img src="img/pagelogo.png" class="page__logo"/>
+        <img src="img/pagelogo.png" class="page__logo" id="home-logo"/>
+        
         <mobile-menu></mobile-menu>
+        
         <nav class="main__nav">
             <a href="#" onClick="
             document.getElementById('current-order').style.display = 'none'
@@ -28,6 +33,7 @@
             document.getElementById('associate-manager').style.display = 'none'
             document.getElementById('login-form').style.display = 'none'
             document.getElementById('place-order').style.display = 'block'
+            document.getElementById('landing-page').style.display = 'none'
             "> Ny beställning</a>
             
             <a href="#" onClick="
@@ -36,6 +42,7 @@
             document.getElementById('associate-manager').style.display = 'none'
             document.getElementById('login-form').style.display = 'none'
             document.getElementById('current-order').style.display = 'block'
+            document.getElementById('landing-page').style.display = 'none'
             "> Pågående beställningar</a>
             
             <a href="#" onClick="
@@ -44,6 +51,7 @@
             document.getElementById('associate-manager').style.display = 'none'
             document.getElementById('login-form').style.display = 'none'
             document.getElementById('current-order').style.display = 'block'
+            document.getElementById('landing-page').style.display = 'none'
             "> Orderhistorik</a>
             
             
@@ -53,6 +61,7 @@
             document.getElementById('associate-manager').style.display = 'block'
             document.getElementById('login-form').style.display = 'none'
             document.getElementById('current-order').style.display = 'none'
+            document.getElementById('landing-page').style.display = 'none'
             "
             class="nav__notification">Leverantörer</a>
             
@@ -72,6 +81,7 @@
                 document.getElementById('associate-manager').style.display = 'none'
                 document.getElementById('login-form').style.display = 'none'
                 document.getElementById('current-order').style.display = 'none'
+                document.getElementById('landing-page').style.display = 'none'
                 "
                 > Användare</a>
                 <hr>
@@ -83,6 +93,7 @@
                     document.getElementById('associate-manager').style.display = 'none'
                     document.getElementById('login-form').style.display = 'block'
                     document.getElementById('current-order').style.display = 'none'
+                    document.getElementById('landing-page').style.display = 'none'
                     "
                 > Logga ut</a>
             </div>
@@ -92,10 +103,11 @@
     
 
     <current-order id="current-order" style="display:none"></current-order>
-    <place-order id="place-order" style="display:block"></place-order>
+    <place-order id="place-order" style="display:none"></place-order>
     <login-form  id="login-form" style="display:none"></login-form>
     <user-manager id="user-manager" style="display:none"></user-manager>
     <associate-manager id="associate-manager" style="display:none"></associate-manager>
+    <landing-page id="landing-page" style="display:block"></landing-page>
     
     
     
