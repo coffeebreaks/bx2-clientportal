@@ -15,17 +15,19 @@
     <script src="js/mobileMenu.js" type="module" defer></script>
     <script src="js/orderStepNav.js" type="module" defer></script>
     <script src="js/landingPage.js" type="module" defer></script>
+    <script src="js/userSettings.js" type="module" defer></script>
  
 </head>
 <body>
 
 
-
+<div class="top__nav__wrapper">
     <div class="top__nav">
         <img src="img/pagelogo.png" class="page__logo" id="home-logo"/>
         
         <mobile-menu></mobile-menu>
         
+      
         <nav class="main__nav">
             <a href="#" onClick="
             document.getElementById('current-order').style.display = 'none'
@@ -34,6 +36,8 @@
             document.getElementById('login-form').style.display = 'none'
             document.getElementById('place-order').style.display = 'block'
             document.getElementById('landing-page').style.display = 'none'
+            document.getElementById('user-settings').style.display = 'none'
+            document.getElementById('prompt-job-type').showModal()
             "> Ny beställning</a>
             
             <a href="#" onClick="
@@ -43,6 +47,7 @@
             document.getElementById('login-form').style.display = 'none'
             document.getElementById('current-order').style.display = 'block'
             document.getElementById('landing-page').style.display = 'none'
+            document.getElementById('user-settings').style.display = 'none'
             "> Pågående beställningar</a>
             
             <a href="#" onClick="
@@ -52,6 +57,7 @@
             document.getElementById('login-form').style.display = 'none'
             document.getElementById('current-order').style.display = 'block'
             document.getElementById('landing-page').style.display = 'none'
+            document.getElementById('user-settings').style.display = 'none'
             "> Orderhistorik</a>
             
             
@@ -62,18 +68,33 @@
             document.getElementById('login-form').style.display = 'none'
             document.getElementById('current-order').style.display = 'none'
             document.getElementById('landing-page').style.display = 'none'
+            document.getElementById('user-settings').style.display = 'none'
             "
             class="nav__notification">Leverantörer</a>
             
           
         </nav>
+      
+
+
         <div class="user__nav">
             <div onClick="document.getElementById('user-nav-dropdown').classList.toggle('show')" class="user__icon">SJ</div>
             <div id="user-nav-dropdown" class="user__nav__dropdown">
                 <p class="title"> Stefan Jakobsson</p>  
                 <p class="subtitle"> Administratör</p>  
                 <hr>
-                <a href="#"> Dina uppgifter</a>
+                <a href="#"
+                onclick="
+
+                document.getElementById('place-order').style.display = 'none'
+                document.getElementById('user-manager').style.display = 'none'
+                document.getElementById('associate-manager').style.display = 'none'
+                document.getElementById('login-form').style.display = 'none'
+                document.getElementById('current-order').style.display = 'none'
+                document.getElementById('landing-page').style.display = 'none'
+                document.getElementById('user-settings').style.display = 'block'
+                "
+                > Dina uppgifter</a>
                 <a href="#"
                 onClick="
                 document.getElementById('place-order').style.display = 'none'
@@ -82,6 +103,8 @@
                 document.getElementById('login-form').style.display = 'none'
                 document.getElementById('current-order').style.display = 'none'
                 document.getElementById('landing-page').style.display = 'none'
+                document.getElementById('user-settings').style.display = 'none'
+                
                 "
                 > Användare</a>
                 <hr>
@@ -94,20 +117,23 @@
                     document.getElementById('login-form').style.display = 'block'
                     document.getElementById('current-order').style.display = 'none'
                     document.getElementById('landing-page').style.display = 'none'
+                    document.getElementById('user-settings').style.display = 'none'
                     "
                 > Logga ut</a>
             </div>
         </div>
         <img src="img/mobilemenu.png" class="mobile__menu__hamburger__icon" href="#" onClick="document.getElementById('mobile-menu').showModal()">
     </div>
+</div>
     
 
+    <landing-page id="landing-page" style="display:none"></landing-page>
     <current-order id="current-order" style="display:none"></current-order>
-    <place-order id="place-order" style="display:none"></place-order>
+    <place-order id="place-order" style="display:block"></place-order>
     <login-form  id="login-form" style="display:none"></login-form>
     <user-manager id="user-manager" style="display:none"></user-manager>
     <associate-manager id="associate-manager" style="display:none"></associate-manager>
-    <landing-page id="landing-page" style="display:block"></landing-page>
+    <user-settings id="user-settings" style="display:none"></user-settings>
     
     
     

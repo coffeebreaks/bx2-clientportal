@@ -451,13 +451,14 @@ dialog::backdrop {
       "col1 col2";
     gap: 1rem;
     align-items: center;
+    margin-bottom: 1rem;
   }
 
   .form__group {
     display: flex;
     flex-direction: column;
     position: relative;
-    padding:0  1rem;
+    /* padding:0  1rem; */
     
   }
 
@@ -960,11 +961,11 @@ dialog::backdrop {
       
 </div> */
 
-.user__settings__wrapper {
+/* .user__settings__wrapper {
   max-width: 700px;
   margin: 0 auto;
   padding: 1rem;
-}
+} */
 
 .user__settings__wrapper h2 {
   font-size: 1.5rem;
@@ -1405,7 +1406,7 @@ hr {
 
 .content__background {
   background-color: #f3f3f3;
-  padding-top: 1rem;
+  padding: 1rem 0;
 }
 
 .content__frame {
@@ -1413,10 +1414,11 @@ hr {
   background-color: white;
   padding:1rem;
   margin: 1rem auto;
+  max-width: 700px;
   box-shadow: 2px 3px 3px 1px rgb(0 0 0 / 12%);
 }
 
-@media(max-width:500px){
+@media(max-width:740px){
   .content__frame {
     margin: 1rem;
   }
@@ -1431,7 +1433,7 @@ hr {
 .page__heading {
   border-bottom: 1px solid var(--bx2-lightgray2);
   color: var(--bx2-lightgray2);
-  max-width: 700px;
+  max-width: calc(700px + 2rem);
   margin: 0 auto;
   padding-bottom: 1rem;
   margin-bottom: 1rem;
@@ -1548,4 +1550,217 @@ hr {
     margin: 1rem;
     text-align: center;
   }
+}
+
+/* //Settings */
+
+h3.settings__header {
+  margin: 0;
+  margin-bottom: 1rem;
+  color: var(--bx2-gray);
+  text-align: center;
+}
+
+.company__infobox {
+  display: flex;
+  align-items: center;
+}
+
+.company__logo {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+img.company__infobox__icon {
+  height: 54px;
+}
+
+.company__infobox__content {
+  margin-left: 1rem;
+  max-width: 60ch;
+}
+
+.company__logo__file {
+  display: none;
+}
+
+.trigger__file__upload {
+  color: var(--bx2-blue);
+  margin: 0;
+}
+
+p.company__logo__maxsize {
+  margin: 0;
+  padding: 0;
+  font-size: 0.8rem;
+}
+
+.save__button {
+  padding: 1rem;
+  background-color: var(--bx2-blue);
+  color: white;
+  text-align: center;
+  max-width: 300px;
+  border-radius: 6px;
+  margin: 1rem auto;
+  /* position: sticky; */
+  /* bottom: 11px; */
+}
+
+/* jobpicker */
+
+dialog.prompt__job__type {
+  background-color: #f3f3f3;
+}
+
+.job__type__options {
+  display: flex;
+}
+
+img.job__type__icon {
+  height: 30px;
+  margin: 1rem;
+}
+
+.job__type__row {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  margin: 0.5rem;
+  min-width: 105px;
+  align-items: center;
+  padding: 1rem;
+}
+
+@media(max-width: 500px){
+  .job__type__options {
+    flex-flow: column;
+  }
+
+  dialog.prompt__job__type {
+
+    width: 100%;
+}
+}
+
+
+/* Enheter order */
+
+p.form__step__description {
+  text-align: center;
+}
+
+.form__step__unit__row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas: 
+  "id   idValue   model modelValue edit"
+  "type typeValue weight weightValue edit"
+  ;
+  border-bottom: 1px solid var(--bx2-lightgray3);
+  max-width: 400px;
+  margin: 1rem auto;
+  padding: 0.5rem;
+}
+
+.form__step__unit__id__taxonomy {
+  grid-area: id;
+  color: var(--bx2-gray);
+  font-weight: 500;
+  margin: 0px;
+  padding: 0px;
+}
+
+.form__step__unit__id__value {
+  grid-area: idValue;
+  color: var(--bx2-blue);
+  margin: 0px;
+  padding: 0px;
+}
+
+.form__step__unit__model__taxonomy {
+  grid-area: model;
+  color: var(--bx2-gray);
+  font-weight: 500;
+  margin: 0px;
+  padding: 0px;
+}
+
+.form__step__unit__model__value {
+  grid-area: modelValue;
+  color: var(--bx2-blue);
+  margin: 0px;
+  padding: 0px;
+}
+
+.form__step__unit__type__taxonomy {
+  grid-area: type;
+  color: var(--bx2-gray);
+  font-weight: 500;
+  margin: 0px;
+  padding: 0px;
+}
+
+.form__step__unit__type__value {
+  grid-area: typeValue;
+  color: var(--bx2-blue);
+ 
+  margin: 0px;
+  padding: 0px;
+}
+
+.form__step__unit__weight__taxonomy {
+  grid-area: weight;
+  color: var(--bx2-gray);
+  font-weight: 500;
+  margin: 0px;
+  padding: 0px;
+}
+
+.form__step__unit__weight__value {
+  grid-area: weightValue;
+  color: var(--bx2-blue);
+
+  margin: 0px;
+  padding: 0px;
+}
+
+.form__step__unit__edit {
+  height: 15px;
+  width: auto;
+  align-self: center;
+  grid-area: edit;
+}
+
+
+.form__step__add__unit {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem;
+  padding: 1rem;
+
+  border-radius: 6px;
+  max-width: 400px;
+  margin: 1rem auto;
+  color: var(--bx2-blue);
+}
+
+.form__step__add__unit__icon {
+  width: 40px;
+}
+
+.form__step__add__unit__text {
+  margin: 0;
+  margin-left: 1rem;
+}
+
+dialog.new__order__add__units {
+  width: 100%;
+  max-width: 700px;
+  box-sizing: border-box;
 }

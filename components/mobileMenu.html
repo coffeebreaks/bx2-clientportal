@@ -11,11 +11,14 @@
     <div class="mobile__menu__nav"  onClick="document.getElementById('mobile-menu').close()">
         <div class="nav__row"
         onClick="
+        document.getElementById('landing-page').style.display = 'none'
             document.getElementById('current-order').style.display = 'none'
             document.getElementById('user-manager').style.display = 'none'
             document.getElementById('associate-manager').style.display = 'none'
             document.getElementById('login-form').style.display = 'none'
             document.getElementById('place-order').style.display = 'block'
+            document.getElementById('user-settings').style.display = 'none'
+            document.getElementById('prompt-job-type').showModal()
             "
         >Ny beställning</div>
 
@@ -26,6 +29,8 @@
             document.getElementById('associate-manager').style.display = 'none'
             document.getElementById('login-form').style.display = 'none'
             document.getElementById('current-order').style.display = 'block'
+            document.getElementById('landing-page').style.display = 'none'
+            document.getElementById('user-settings').style.display = 'none'
             
         ">Pågående beställningar</div>
 
@@ -37,6 +42,8 @@
             document.getElementById('associate-manager').style.display = 'none'
             document.getElementById('login-form').style.display = 'none'
             document.getElementById('current-order').style.display = 'block'
+            document.getElementById('landing-page').style.display = 'none'
+            document.getElementById('user-settings').style.display = 'none'
         "
         
         >Ordershitorik</div>
@@ -47,6 +54,9 @@
             document.getElementById('associate-manager').style.display = 'block'
             document.getElementById('login-form').style.display = 'none'
             document.getElementById('current-order').style.display = 'none'
+            document.getElementById('landing-page').style.display = 'none'
+            document.getElementById('landing-page').style.display = 'none'
+            document.getElementById('user-settings').style.display = 'none'
             "
         
         >Leverantörer</div>
@@ -58,12 +68,38 @@
                 document.getElementById('associate-manager').style.display = 'none'
                 document.getElementById('login-form').style.display = 'none'
                 document.getElementById('current-order').style.display = 'none'
+                document.getElementById('landing-page').style.display = 'none'
+                document.getElementById('user-settings').style.display = 'none'
                 "
         >Dina uppgifter</div>
-        <div class="nav__row">Användare</div>
+        <div class="nav__row"
+        onClick="
+        document.getElementById('place-order').style.display = 'none'
+        document.getElementById('user-manager').style.display = 'none'
+        document.getElementById('associate-manager').style.display = 'none'
+        document.getElementById('login-form').style.display = 'none'
+        document.getElementById('current-order').style.display = 'none'
+        document.getElementById('landing-page').style.display = 'none'
+        document.getElementById('user-settings').style.display = 'block'
+        "
+        
+        >Användare</div>
         <hr>
-        <div class="nav__row">Support</div>
-        <div class="nav__row">Logga ut</div>
+        <div class="nav__row"
+        
+        
+        >Support</div>
+        <div class="nav__row"
+        onClick="
+        document.getElementById('place-order').style.display = 'none'
+        document.getElementById('user-manager').style.display = 'none'
+        document.getElementById('associate-manager').style.display = 'none'
+        document.getElementById('login-form').style.display = 'block'
+        document.getElementById('current-order').style.display = 'none'
+        document.getElementById('landing-page').style.display = 'none'
+        document.getElementById('user-settings').style.display = 'none'
+        "
+        >Logga ut</div>
           <hr>
     <div class="user__info">
         <div class="mobile__info__name"> Stefan Jakobsson</div>

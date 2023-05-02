@@ -1,5 +1,25 @@
 <div class="create__order__wrapper content__background">
+    <h2 class="page__heading">Skapa beställning</h2>
 
+    <dialog class="prompt__job__type" id="prompt-job-type" onClick="this.close()">
+        <h2 class="page__heading">Välj jobbtyp</h3>
+        <div class="job__type__options">
+
+            <div class="job__type__row content__frame">
+                <img src="icons/blue/multitransport.png" class="job__type__icon">
+                <div class="job__type__name">Multitransport</div>
+            </div>
+            <div class="job__type__row content__frame">
+                <img src="icons/blue/warning.png" class="job__type__icon">
+                <div class="job__type__name">TMA</div>
+            </div>
+            <div class="job__type__row content__frame">
+                <img src="icons/blue/car.png" class="job__type__icon">
+                <div class="job__type__name">Bärgning</div>
+            </div>
+
+        </div>
+    </dialog>
     <div class="form__step content__frame" id="form-step-1">
 
         <div class="form__step__header">
@@ -48,13 +68,84 @@
         <button onClick="
         document.getElementById('form-step-1').style.display = 'none'
         document.getElementById('form-step-2').style.display = 'block'
-        " class="button__next__step">Vidare till upphämtning -></button>
+        " class="button__next__step">Gå vidare</button>
     </div>
     
     
 <div class="form__step content__frame" id="form-step-2">
     <div class="form__step__header">
         <div class="form__step__number">2</div>
+        <h2>Lägg till enheter</h2>
+    </div>
+  
+    <p class="form__step__description">Lägg till de enheter som ingår i multitransporten</p>
+    
+    <div class="form__step__unit__wrapper">
+        <div class="form__step__unit__row">
+            <p class="form__step__unit__id__taxonomy">Identitet</p>
+            <p class="form__step__unit__id__value">XDZ 231</p>
+            <p class="form__step__unit__model__taxonomy">Model</p>
+            <p class="form__step__unit__model__value">Volvo XC90</p>
+            <p class="form__step__unit__type__taxonomy">Typ</p>
+            <p class="form__step__unit__type__value">Personbil</p>
+            <p class="form__step__unit__weight__taxonomy">Totalvikt</p>
+            <p class="form__step__unit__weight__value">2400kg</p>
+            <img src="icons/blue/edit.png" class="form__step__unit__edit">
+        </div>
+        <div class="form__step__unit__row">
+            <p class="form__step__unit__id__taxonomy">Identitet</p>
+            <p class="form__step__unit__id__value">XDZ 231</p>
+            <p class="form__step__unit__model__taxonomy">Model</p>
+            <p class="form__step__unit__model__value">Volvo XC90</p>
+            <p class="form__step__unit__type__taxonomy">Typ</p>
+            <p class="form__step__unit__type__value">Personbil</p>
+            <p class="form__step__unit__weight__taxonomy">Totalvikt</p>
+            <p class="form__step__unit__weight__value">2400kg</p>
+            <img src="icons/blue/edit.png" class="form__step__unit__edit" onClick="document.getElementById('new-order-add-units').showModal()">
+        </div>
+
+        <div class="form__step__add__unit"  onClick="document.getElementById('new-order-add-units').showModal()">
+            <img src="icons/blue/plus.png" class="form__step__add__unit__icon">
+            <p class="form__step__add__unit__text"> Lägg till enhet </p>
+        </div>
+
+
+        <dialog id="new-order-add-units" class="new__order__add__units">
+            <h2 class="page__heading"> Lägg till enhet</h2>
+            <div class="form__group">
+                <label for="order__name">Identitet</label>
+                <input type="text" id="order__name" name="order__name" placeholder="XDZ 231">
+            </div>
+            <div class="form__group">
+                <label for="order__name">Model</label>
+                <input type="text" id="order__name" name="order__name" placeholder="Volvo XC90">
+            </div>
+            <div class="form__group">
+                <label for="order__name">Typ</label>
+                <input type="text" id="order__name" name="order__name" placeholder="Personbil">
+            </div>
+            <div class="form__group">
+                <label for="order__name">Totalvikt</label>
+                <input type="text" id="order__name" name="order__name" placeholder="2400kg">
+            </div>
+
+            <div class="save__button"> Spara</div>
+            <div class="delete__button"> Ta bort</div>
+            <div class="cancel__button"> Avbryt</div>
+        </dialog>
+
+    </div>
+
+
+    <button onClick="
+    document.getElementById('form-step-2').style.display = 'none'
+    document.getElementById('form-step-3').style.display = 'block'
+    " class="button__next__step">Vidare till destination -></button>
+</div>
+
+<div class="form__step content__frame" id="form-step-3">
+    <div class="form__step__header">
+        <div class="form__step__number">3</div>
         <h2>Upphämtningsplats</h2>
     </div>
     <div class="form__two__cols">
@@ -75,14 +166,14 @@
         </div>
     </div>
     <button onClick="
-    document.getElementById('form-step-2').style.display = 'none'
-    document.getElementById('form-step-3').style.display = 'block'
+    document.getElementById('form-step-3').style.display = 'none'
+    document.getElementById('form-step-4').style.display = 'block'
     " class="button__next__step">Vidare till destination -></button>
 </div>
 
-<div class="form__step content__frame" id="form-step-3">
+<div class="form__step content__frame" id="form-step-4">
     <div class="form__step__header">
-        <div class="form__step__number">3</div>
+        <div class="form__step__number">4</div>
         <h2>Destination</h2>
     </div>
 
@@ -103,14 +194,14 @@
         </div>
     </div>
     <button onClick="
-    document.getElementById('form-step-3').style.display = 'none'
-    document.getElementById('form-step-4').style.display = 'block'
+    document.getElementById('form-step-4').style.display = 'none'
+    document.getElementById('form-step-5').style.display = 'block'
     " class="button__next__step">Ladda upp foto</button>
 </div>
 
-<div class="form__step content__frame" id="form-step-4">
+<div class="form__step content__frame" id="form-step-5">
     <div class="form__step__header">
-        <div class="form__step__number">4</div>
+        <div class="form__step__number">5</div>
         <h2>Foto</h2>
     </div>
     <div class="photo__col">
@@ -121,14 +212,14 @@
         </div>
     </div>
     <button onClick="
-    document.getElementById('form-step-4').style.display = 'none'
-    document.getElementById('form-step-5').style.display = 'block'
+    document.getElementById('form-step-5').style.display = 'none'
+    document.getElementById('form-step-6').style.display = 'block'
     " class="button__next__step">Vidare till leverantör -> </button>
 </div>
 
-<div class="form__step content__frame" id="form-step-5">
+<div class="form__step content__frame" id="form-step-6">
     <div class="form__step__header">
-        <div class="form__step__number">5</div>
+        <div class="form__step__number">6</div>
         <h2>Välj leverantör</h2>
     </div>
     <div class="supplier__rows__wrapper">
@@ -164,14 +255,14 @@
 
     </div>
     <button onClick="
-    document.getElementById('form-step-5').style.display = 'none'
-    document.getElementById('form-step-6').style.display = 'block'
+    document.getElementById('form-step-6').style.display = 'none'
+    document.getElementById('form-step-7').style.display = 'block'
     " class="button__next__step"> Vidare till granskning -></button>
 </div>
 
-<div class="form__step content__frame" id="form-step-6">
+<div class="form__step content__frame" id="form-step-7">
     <div class="form__step__header">
-        <div class="form__step__number">6</div>
+        <div class="form__step__number">7</div>
         <h2>Sammanfattning</h2>
     </div>
     <div class="summary__wrapper">
@@ -216,8 +307,8 @@
 
     </div>
     <button style="display: inherit" onClick="
-    document.getElementById('form-step-5').style.display = 'none'
-    document.getElementById('form-step-6').style.display = 'block'
+    document.getElementById('form-step-6').style.display = 'none'
+    document.getElementById('form-step-7').style.display = 'block'
     " class="button__next__step">BESTÄLL</button>
 </div>
 </div>
