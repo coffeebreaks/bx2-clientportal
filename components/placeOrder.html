@@ -104,13 +104,13 @@
             <img src="icons/blue/edit.png" class="form__step__unit__edit" onClick="document.getElementById('new-order-add-units').showModal()">
         </div>
 
-        <div class="form__step__add__unit"  onClick="document.getElementById('new-order-add-units').showModal()">
+        <button class="form__step__add__unit" tabindex="0" id="new-order-open-add-units-dialog" onClick="document.getElementById('new-order-add-units').showModal()">
             <img src="icons/blue/plus.png" class="form__step__add__unit__icon">
             <p class="form__step__add__unit__text"> Lägg till enhet </p>
-        </div>
+        </button>
 
 
-        <dialog id="new-order-add-units" class="new__order__add__units">
+        <dialog id="new-order-add-units" class="new__order__add__units" >
             <h2 class="page__heading"> Lägg till enhet</h2>
             <div class="form__group">
                 <label for="order__name">Identitet</label>
@@ -129,9 +129,9 @@
                 <input type="text" id="order__name" name="order__name" placeholder="2400kg">
             </div>
 
-            <div class="save__button"> Spara</div>
+            <button class="save__button"  tabindex="0" onClick="document.getElementById('new-order-add-units').close()"> Spara</button>
             <div class="delete__button"> Ta bort</div>
-            <div class="cancel__button"> Avbryt</div>
+           
         </dialog>
 
     </div>

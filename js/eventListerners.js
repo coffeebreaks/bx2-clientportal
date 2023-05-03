@@ -7,3 +7,10 @@ document.getElementById('home-logo').addEventListener('click', function () {
     document.getElementById('landing-page').style.display = 'block'
 
 });
+
+
+document.getElementById('new-order-open-add-units-dialog').addEventListener("keydown", function(event) {
+    if (event.key === "Enter") {
+      myButton.click();
+    }
+  });
