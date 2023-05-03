@@ -1,98 +1,79 @@
-<div class="user__settings__wrapper">
-    <h2 class="page__heading">Användarinställningar</h2>
-    <h3>Visar användare för Bärgarna AB</h3>
-        <div class="user__list">
-            <div class="user__list__row">
-                <p class="user__list__data">
-                    <span class="user__list__taxonomy">Användarnamn </span>
-                    <span class="user__list__value">stefan@grafikcentralen.se</span>
-                </p>
-                
-                <p class="user__list__data">
-                    <span class="user__list__taxonomy">Namn </span>
-                    <span class="user__list__value">Stefan Jakobsson</span>
-                </p>
-
-                <p class="user__list__action"> Redigera </p>
-                <p class="user__list__action"> Ta bort </p>
-            </div>
-       
-  
+<div class="user__settings__wrapper content__background">
+    <h2 class="page__heading ">Användarinställningar</h2>
+    <div class="user__list content__frame">
+            <p>Visar användare för Bärgarna AB</p>
+          
         
             <div class="user__list__row">
-                <p class="user__list__data">
-                    <span class="user__list__taxonomy">Användarnamn </span>
-                    <span class="user__list__value">stefan@grafikcentralen.se</span>
-                </p>
+              
+                    <div class="user__list__username__taxonomy user__list__taxonomy">Användarnamn </div>
+                    <div class="user__list__username__value user__list__value">stefan@grafikcentralen.se</div>
                 
-                <p class="user__list__data">
-                    <span class="user__list__taxonomy">Namn </span>
-                    <span class="user__list__value">Stefan Jakobsson</span>
-                </p>
+            
+                    <div class="user__list__realname__taxonomy user__list__taxonomy">Namn </div>
+                    <div class="user__list__realname__value user__list__value">Stefan Jakobsson</div>
 
-                <p class="user__list__action"> Redigera </p>
-                <p class="user__list__action"> Ta bort </p>
+                    <div class="user__list__email__taxonomy user__list__taxonomy">E-post </div>
+                    <div class="user__list__email__value user__list__value">stefan@grafikcentralen.se</div>
+                
+                    <div class="user__list__phone__taxonomy user__list__taxonomy">Telefon</div>
+                    <div class="user__list__phone__value user__list__value">076 880 45 45 </div>
+                <img src="icons/blue/edit.png" class="user__list__action"/> 
+              
             </div>
-      
-  
-       
+        
             <div class="user__list__row">
-                <p class="user__list__data">
-                    <span class="user__list__taxonomy">Användarnamn </span>
-                    <span class="user__list__value">stefan@grafikcentralen.se</span>
-                </p>
+              
+                    <div class="user__list__username__taxonomy user__list__taxonomy">Användarnamn </div>
+                    <div class="user__list__username__value user__list__value">stefan@grafikcentralen.se</div>
                 
-                <p class="user__list__data">
-                    <span class="user__list__taxonomy">Namn </span>
-                    <span class="user__list__value">Stefan Jakobsson</span>
-                </p>
+            
+                    <div class="user__list__realname__taxonomy user__list__taxonomy">Namn </div>
+                    <div class="user__list__realname__value user__list__value">Stefan Jakobsson</div>
 
-                <p class="user__list__action"> Redigera </p>
-                <p class="user__list__action"> Ta bort </p>
+                    <div class="user__list__email__taxonomy user__list__taxonomy">E-post </div>
+                    <div class="user__list__email__value user__list__value">stefan@grafikcentralen.se</div>
+                
+                    <div class="user__list__phone__taxonomy user__list__taxonomy">Telefon</div>
+                    <div class="user__list__phone__value user__list__value">076 880 45 45 </div>
+                <img src="icons/blue/edit.png" class="user__list__action"/> 
             </div>
         </div>
 
 
 
-        <button class="user__list__add__button"
+        <button class="save__button"
         onClick="document.getElementById('user-list-add').showModal()"
         >Lägg till användare</button>
         
 
         <dialog class="user__list__add" id="user-list-add">
-            <!-- Inputs:
-            Användarnamn
-            Namn
-            E-post
-            Telefonnummer
-            Väljföretag - select: "Bärgarna AB", "Grafikcentralen AB"
-            Behörigheter - checkbox: "Huvudadministratör", "Företagsadministratör", "Systemadministratör", Bärgare, Ekonomi,Dirigering, Bärgning Koodrinator, Register, Extern beställare, 
-            Funtionlaitet - checkbox: "Multitransport", "Tma", "Bärgning" -->
-
-            <div class="user__field__group">
+        
+    
+            <div class="form__group">
                 <label for="user__name">Användarnamn</label>
                 <input type="text" id="user__name" name="user__name" placeholder="Användarnamn">
             </div>
 
-            <div class="user__field__group">
+            <div class="form__group">
                 <label for="user__name">Namn</label>
                 <input type="text" id="user__name" name="user__name" placeholder="Namn">
 
             </div>
 
-            <div class="user__field__group">
+            <div class="form__group">
                 <label for="user__name">E-post</label>
                 <input type="text" id="user__name" name="user__name" placeholder="E-post">
 
             </div>
 
-            <div class="user__field__group">
+            <div class="form__group">
                 <label for="user__name">Telefonnummer</label>
                 <input type="text" id="user__name" name="user__name" placeholder="Telefonnummer">
 
             </div>
 
-            <div class="user__field__group">
+            <div class="form__group">
                 <label for="user__name">Välj företag</label>
                 <select name="user__company" id="user__company">
                     <option value="Bärgarna AB">Bärgarna AB</option>
@@ -101,8 +82,8 @@
 
             </div>
 
-            <div class="user__checkbox__group">
-                <label for="user__name">Behörigheter</label>
+            <h2>Behörigheter</h2>
+            <div class="form__group user__checkboxes">
                 <div class="user__checkbox__group__item">
                     <input type="checkbox" id="user__name" name="user__name" placeholder="Namn">
                     <label for="user__name">Huvudadministratör</label>
@@ -138,25 +119,33 @@
                 <div class="user__checkbox__group__item">
                     <input type="checkbox" id="user__name" name="user__name" placeholder="Namn">
                     <label for="user__name">Extern beställare</label>
-            </div>
-
-            <div clasS="user__checkbox__group">
-                <label for="user__name">Funktionalitet</label>
-                <div class="user__checkbox__group__item">
-                    <input type="checkbox" id="user__name" name="user__name" placeholder="Namn">
-                    <label for="user__name">Multitransport</label>
-                </div>
-                <div class="user__checkbox__group__item">
-                    <input type="checkbox" id="user__name" name="user__name" placeholder="Namn">
-                    <label for="user__name">TMA</label>
-                </div>
-                <div class="user__checkbox__group__item">
-                    <input type="checkbox" id="user__name" name="user__name" placeholder="Namn">
-                    <label for="user__name">Bärgning</label>
                 </div>
             </div>
 
+            <h2>Funktionalitet</h2>
 
+            <div class="user__checkbox__group user__checkboxes">
+
+                <div class="user__checkbox__group__item">
+                    <input type="checkbox" class="checkbox" id="user__name" name="multitransport" placeholder="Namn">
+                    <label for="multitransport">Multitransport</label>
+                </div>
+                
+                <div class="user__checkbox__group__item">
+                    <input type="checkbox" id="user__name" name="tma" placeholder="Namn">
+                    <label for="tma">TMA</label>
+                </div>
+                
+                <div class="user__checkbox__group__item">
+                    <input type="checkbox" id="user__name" name="towing" placeholder="Namn">
+                    <label for="towing">Bärgning</label>
+                </div>
+
+            </div>
+
+            <button class="save__button">Spara</button>
+            <button class="button__back">Stäng</button>
+            <div class="delete__button"> Ta bort användare</div>
                 
         </dialog>
           
