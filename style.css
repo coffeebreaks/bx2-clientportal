@@ -18,6 +18,11 @@ body {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
+input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+}
+
 button {
   appearance: none;
   background: transparent;
@@ -31,6 +36,14 @@ button {
   cursor: pointer;
   outline: none;
 }
+
+select {
+  font-family: system-ui;
+  padding: 0.5rem;
+  border-radius: 4px;
+  border-color: var(--bx2-lightgray3);
+}
+
 
 
 .top__nav {
@@ -195,8 +208,8 @@ p.subtitle {
 
 
 .current__orders {
-    display: flex;
-    flex-direction: column;
+    /* display: flex;
+    flex-direction: column; */
     width: 100%;
     padding: 1rem;
     box-sizing: border-box;
@@ -205,13 +218,14 @@ p.subtitle {
 }
 
 .order__info {
-  max-width: 50ch;
+    padding: 1rem 0;
+  
 }
 
 
 .current__orders__list {
     margin: 0 auto;
-    width: min(700px, 100%);
+    /* width: calc(100% - 2rem); */
     flex-direction: column;
     font-size: 1rem;
   }
@@ -274,6 +288,9 @@ p.subtitle {
   .order__row__title {
     grid-area: title;
     margin: 0;
+    white-space:nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
     font-size: 1rem;
   }
   
@@ -447,9 +464,23 @@ dialog::backdrop {
     display: none;
     background: var(--bx2-blue);
     border: none;
+    text-align: center;
     color: white;
     min-width: 300px;
 }
+
+button.button__back {
+  border-radius: 6px;
+  padding: 1rem;
+  margin: 1rem auto;
+  display: none;
+  background: var(--bx2-lightgray);
+  border: none;
+  text-align: center;
+  color: var(--bx2-gray);
+  min-width: 300px;
+}
+
 
   .form__step h2 {
     text-align: center;
@@ -480,7 +511,7 @@ dialog::backdrop {
   .form__group input[type="text"], .form__group textarea, .form__group input[type="date"] {
     border-radius: 5px;
      outline: none;
-  
+     resize: none;
    }
 
   .form__group input[type="text"]:focus, .form__group textarea:focus{
@@ -546,17 +577,29 @@ dialog::backdrop {
     font-size: 1rem;
     height: 100px;
     display: flex;
+    flex-flow: column;
     justify-content: center;
     align-items: center;
-    border: 3px dotted var(--bx2-green);
+    border: 3px dotted var(--bx2-blue);
     
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  }
+
+  .photo__label {
+    font-size: 0.8rem;
+    color: var(--bx2-gray);
+    margin-bottom: 1rem;
+  }
+
+  @media(max-width: 600px){
+    .photo__button {
+      margin: 0px;
+    }
   }
 
   .photo__button img {
     width: 50px;
     height: auto;
-    margin-right: 10px;
   }
 
   .supplier__row {
@@ -564,9 +607,9 @@ dialog::backdrop {
     grid-template-columns: 1fr 2fr 1fr 1fr 1fr;
     grid-template-rows: auto auto auto;
     grid-template-areas:
-      "logo title phone email select"
-      "logo distance phone email select"
-      "logo empty phone email select";
+    "logo title title title select"
+    "logo distance phone email select"
+    "logo empty phone email select";
     /* gap: 1rem; */
     align-items: center;
     padding: .5rem;
@@ -588,6 +631,7 @@ dialog::backdrop {
   }
 
   .supplier__logo {
+    margin-right: 12px;
     grid-area: logo;
     height: 50px;
     width: 50px;
@@ -599,6 +643,9 @@ dialog::backdrop {
     font-size: 1.2rem;
     font-weight: 400;
     text-align: left;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   .supplier__phone {
@@ -637,17 +684,23 @@ dialog::backdrop {
       "col1 col2 col3";
     gap: 1rem;
     align-items: center;
+    margin: 0 1rem;
   }
 
   p.summary__title {
-    font-size: .8rem;
+    font-size: 1rem;
     font-weight: 600;
     margin: 0px;
     padding: 0px;
   }
 
+  .summary__wrapper {
+    padding: 1rem 0px;
+    border-bottom: 1px solid var(--bx2-lightgray);
+}
+
   p.summary__data {
-    font-size: .8rem;
+    font-size: 1rem;
     color: var(--bx2-gray);
     margin: 0px;
     padding: 0px;
@@ -740,13 +793,16 @@ dialog::backdrop {
 
     .summary__part {
       padding-bottom: 1rem;
-    border-bottom: 1px solid var(--bx2-blue);
+    
     }
 
     button.button__next__step {
       display: block;
     }
-
+    
+    button.button__back {
+      display: block;
+    }
 
 
   }
@@ -793,12 +849,12 @@ dialog::backdrop {
 
 
 .login__wrapper {
-
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  min-height: 100vh;
+  /* padding: 1rem; */
   background: linear-gradient(45deg, #299874, #0045c0);
 }
 
@@ -886,6 +942,23 @@ dialog::backdrop {
 }
 
 
+@media(max-width: 800px){
+  .frame__two__cols {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "col1"
+      "col2";
+  }
+
+  .login__news__col {
+   display: none;
+}
+
+.login__form__col {
+  padding: 1rem;
+}
+}
+
 
 .form__field__group {
   display: flex;
@@ -911,76 +984,29 @@ dialog::backdrop {
 }
 
 /* Användarhantering */
-/* 
 
-<div class="user__settings__wrapper">
-<h2>Användarinställningar</h2>
-<h3> Bärgarna AB</h3>
-    <div class="user__list">
-        <div class="user__list__row">
-            <p class="user__list__data">
-                <span class="user__list__taxonomy">Användarnamn </span>
-                <span class="user__list__value">stefan@grafikcentralen.se</span>
-            </p>
-            
-            <p class="user__list__data">
-                <span class="user__list__taxonomy">Namn </span>
-                <span class="user__list__value">Stefan Jakobsson</span>
-            </p>
-
-            <p class="user__list__action"> Redigera </p>
-            <p class="user__list__action"> Ta bort </p>
-        </div>
-    </div>
-
-    <div class="user__list">
-        <div class="user__list__row">
-            <p class="user__list__data">
-                <span class="user__list__taxonomy">Användarnamn </span>
-                <span class="user__list__value">stefan@grafikcentralen.se</span>
-            </p>
-            
-            <p class="user__list__data">
-                <span class="user__list__taxonomy">Namn </span>
-                <span class="user__list__value">Stefan Jakobsson</span>
-            </p>
-
-            <p class="user__list__action"> Redigera </p>
-            <p class="user__list__action"> Ta bort </p>
-        </div>
-    </div>
-
-    <div class="user__list">
-        <div class="user__list__row">
-            <p class="user__list__data">
-                <span class="user__list__taxonomy">Användarnamn </span>
-                <span class="user__list__value">stefan@grafikcentralen.se</span>
-            </p>
-            
-            <p class="user__list__data">
-                <span class="user__list__taxonomy">Namn </span>
-                <span class="user__list__value">Stefan Jakobsson</span>
-            </p>
-
-            <p class="user__list__action"> Redigera </p>
-            <p class="user__list__action"> Ta bort </p>
-        </div>
-    </div>
-
-
-
-    <button class="user__list__add__button">Lägg till användare</button>
-    
-
-  
-      
-</div> */
-
-/* .user__settings__wrapper {
+dialog.user__list__add {
   max-width: 700px;
-  margin: 0 auto;
-  padding: 1rem;
-} */
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.user__checkboxes {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+@media(max-width: 500px){
+  .user__checkboxes {
+
+    grid-template-columns: 1fr 1fr;
+}
+}
+
+.user__checkbox__group__item {
+  display: flex;
+  align-items: center;
+}
 
 .user__settings__wrapper h2 {
   font-size: 1.5rem;
@@ -995,48 +1021,94 @@ dialog::backdrop {
 
 
 .user__list__row {
-  
   height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  border-top: 1px solid var(--bx2-lightgray3);
+  display: grid;
+  grid-template-columns: 1fr 1fr ;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
   padding: 1rem;
-}
-
-
-
-.user__list__row:nth-child(even) {
-  background-color: #f0f0f0;
-}
-
-.user__list__row:nth-child(odd) {
-  background-color: #ffffff;
- 
-}
-
-.user__list__data {
-  display: flex;
-  flex-direction: column;
-  margin: 0;
+  grid-template-areas: 
+  "userTaxonomy     emailTaxonomy   edit"
+  "userValue        emailValue      edit"
+  "realnameTaxonomy phoneTaxonomy   edit"
+  "realnameValue    phoneValue      edit" ;
 }
 
 
 .user__list__taxonomy {
-  font-size: .8rem;
-  color: var(--bx2-gray);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--bx2-blue);
   margin: 0;
 }
 
 .user__list__value {
+  font-weight: 400;
+  color: var(--bx2-gray);
   font-size: 1rem;
-  font-weight: 600;
+  
+}
+
+@media(max-width: 600px){
+  .user__list__row {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas: 
+    "userTaxonomy     edit  "
+    "userValue  edit"
+    "realnameTaxonomy  edit    "
+    " realnameValue  edit "
+    "emailTaxonomy edit"
+    "emailValue edit"
+    "phoneTaxonomy  edit   "
+    "phoneValue edit"
+     ;
+  }
+
+  
+}
+.user__list__username__taxonomy {
+  grid-area: userTaxonomy;
+}
+
+.user__list__username__value {
+  grid-area: userValue;
+}
+.user__list__realname__taxonomy {
+  grid-area: realnameTaxonomy;
+}
+
+.user__list__realname__value {
+  grid-area: realnameValue;
+}
+
+.user__list__email__taxonomy {
+  grid-area: emailTaxonomy;
+}
+
+.user__list__email__value {
+  grid-area: emailValue;
+}
+
+.user__list__phone__taxonomy {
+  grid-area: phoneTaxonomy;
+}
+
+.user__list__phone__value {
+  grid-area: phoneValue;
 }
 
 .user__list__action {
-  font-size: .8rem;
+  grid-area: edit;
+  width: 20px;
+  font-size: 1rem;
+  align-self: start;
+  justify-self: end;
   color: var(--bx2-blue);
   cursor: pointer;
 }
+
+
 
 .user__list__add__button {
   background-color: var(--bx2-green);
@@ -1050,48 +1122,6 @@ dialog::backdrop {
   cursor: pointer;
   margin-bottom: 1rem;
 }
-/* 
-<div class="associate__list"> 
-    
-  
-<div class="associate__list__row">
-    <img src="placeholder.jpg" class="associate__list__row__logo"/>
-    <p class="associate__list__row__taxonomy"> Företag</p>
-    <p class="accociate__list__row__value"> Bärgning AB</p>
-    <p class="associate__list__row__taxonomy"> Tjänst</p>
-    <p class="accociate__list__row__value"> Bärgning</p>
-    <p class="associate__list__row__taxonomy"> Telefon</p>
-    <p class="accociate__list__row__value"> 076 880 45 45</p>
-    <p class="associate__list__row__taxonomy"> E-post</p>
-    <p class="accociate__list__row__value">info@bargningab.se</p>
-    <img src="placeholder.jpg" class="associate__add__button"/>
-</div>
-<div class="associate__list__row">
-    <img src="placeholder.jpg" class="associate__list__row__logo"/>
-    <p class="associate__list__row__taxonomy"> Företag</p>
-    <p class="accociate__list__row__value"> Bärgning AB</p>
-    <p class="associate__list__row__taxonomy"> Tjänst</p>
-    <p class="accociate__list__row__value"> Bärgning</p>
-    <p class="associate__list__row__taxonomy"> Telefon</p>
-    <p class="accociate__list__row__value"> 076 880 45 45</p>
-    <p class="associate__list__row__taxonomy"> E-post</p>
-    <p class="accociate__list__row__value">info@bargningab.se</p>
-    <img src="placeholder.jpg" class="associate__add__button"/>
-</div>
-<div class="associate__list__row">
-    <img src="placeholder.jpg" class="associate__list__row__logo"/>
-    <p class="associate__list__row__taxonomy"> Företag</p>
-    <p class="accociate__list__row__value"> Bärgning AB</p>
-    <p class="associate__list__row__taxonomy"> Tjänst</p>
-    <p class="accociate__list__row__value"> Bärgning</p>
-    <p class="associate__list__row__taxonomy"> Telefon</p>
-    <p class="accociate__list__row__value"> 076 880 45 45</p>
-    <p class="associate__list__row__taxonomy"> E-post</p>
-    <p class="accociate__list__row__value">info@bargningab.se</p>
-    <img src="placeholder.jpg" class="associate__add__button"/>
-</div>
-
-</div> */
 
 /* Associate manager */
 
@@ -1112,11 +1142,11 @@ dialog::backdrop {
 
 .associate__list__row {
  display: grid;
- grid-template-columns: 1fr 3fr 1fr 1fr 2fr 1fr;
+ grid-template-columns: 1fr 3fr 2fr 1fr;
   grid-template-rows: 1fr 1fr;
   grid-template-areas: 
-    "logo   company   email   phone   status  add"
-    "logo   type      email   phone   status  add";
+    "logo   company   status  add"
+    "logo   type      status  add";
 
       border-bottom: 1px solid var(--bx2-lightgray);
 }
@@ -1133,9 +1163,25 @@ dialog::backdrop {
   border-radius: 5px;
   color: white;
   font-size: .8rem;
-  
+  width: max-content;
   text-align: center;
-  padding: .1rem 1rem;
+  padding: 0.1rem 0.5rem;
+}
+
+
+@media(max-width: 500px){
+  .associate__list__row {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr ;
+    grid-template-areas:
+    "logo company company add"
+    "logo type status add";
+  }
+
+  .associate__list__row__status{
+    align-self: start;
+    margin-top: 4px;
+  }
 }
 
 .associate__status__green {
@@ -1180,6 +1226,9 @@ dialog::backdrop {
   font-size: 1.1rem;
   font-weight: 600;
   align-self: flex-end;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
   margin: 0;
 }
 
@@ -1304,10 +1353,12 @@ p, h1, h2, h3 {
 
 .nav__row {
   margin-top: 10px;
-  margin-bottom: 10px;
-  font-size: 1.5em;
-  font-weight: 400;
-  color: var(--bx2-gray);
+    margin-bottom: 10px;
+    font-size: 1.1em;
+    border-left: 4px solid var(--bx2-blue);
+    font-weight: 400;
+    color: var(--bx2-gray);
+    padding: 0.8rem;
 }
 
 .nav__row:hover {
@@ -1420,6 +1471,7 @@ hr {
 /* static classes */
 
 .content__background {
+  min-height: 100vh;
   background-color: #f3f3f3;
   padding: 1rem 0;
 }
@@ -1450,8 +1502,13 @@ hr {
   color: var(--bx2-lightgray2);
   max-width: calc(700px + 2rem);
   margin: 0 auto;
+  
   padding-bottom: 1rem;
   margin-bottom: 1rem;
+}
+
+.thin {
+  font-weight: 300;
 }
 
 
@@ -1530,12 +1587,14 @@ hr {
   display: flex;
   flex-flow: column;
   box-sizing: border-box;
-  margin: 0;
+  margin: 1rem 0;
   justify-content: center;
   align-items: center;
  
   min-height: 150px;
 }
+
+
 
 .landingpage__generic__icon {
   width: 40px;
@@ -1558,7 +1617,7 @@ hr {
   }
 
   .landingpage__generic {
-    margin: 1rem;
+    margin: 0rem 1rem;
   }
 
   .page__heading {
@@ -1634,6 +1693,8 @@ p.company__logo__maxsize {
 .delete__button {
   color: var(--bx2-red);
   text-align: center;
+  display: block;
+  margin: 0 auto;
   text-decoration: underline;
 }
 
@@ -1685,16 +1746,20 @@ p.form__step__description {
 
   grid-template-columns: 1fr 2fr 1fr 2fr;
     grid-template-rows: 1fr 1fr;
+
     gap: 4px;
   grid-template-areas: 
   "id   idValue   model modelValue edit"
   "type typeValue weight weightValue edit"
   ;
+
   border-bottom: 1px solid var(--bx2-lightgray3);
   max-width: 400px;
-  margin: 1rem auto;
+  margin: 0 auto;
   padding: 0.5rem;
 }
+
+
 
 .form__step__unit__id__taxonomy {
   grid-area: id;
@@ -1708,12 +1773,17 @@ p.form__step__description {
   grid-area: idValue;
   color: var(--bx2-blue);
   margin: 0px;
+
   padding: 0px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .form__step__unit__model__taxonomy {
   grid-area: model;
   color: var(--bx2-gray);
+  
   font-weight: 500;
   margin: 0px;
   padding: 0px;
@@ -1723,7 +1793,11 @@ p.form__step__description {
   grid-area: modelValue;
   color: var(--bx2-blue);
   margin: 0px;
+ 
   padding: 0px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .form__step__unit__type__taxonomy {
@@ -1737,8 +1811,11 @@ p.form__step__description {
 .form__step__unit__type__value {
   grid-area: typeValue;
   color: var(--bx2-blue);
- 
+  
   margin: 0px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
   padding: 0px;
 }
 
@@ -1753,7 +1830,10 @@ p.form__step__description {
 .form__step__unit__weight__value {
   grid-area: weightValue;
   color: var(--bx2-blue);
-
+  
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
   margin: 0px;
   padding: 0px;
 }
@@ -1763,6 +1843,30 @@ p.form__step__description {
   width: auto;
   align-self: center;
   grid-area: edit;
+}
+
+
+@media(max-width: 500px){
+  
+  .form__step__unit__row {
+    grid-template-columns: 3fr 3fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+
+    grid-template-areas: 
+    "id model edit"
+    "idValue modelValue edit"
+    "type weight edit"
+    "typeValue weightValue edit"
+    ;
+  }
+
+  .form__step__unit__edit {
+    height: 23px;
+    width: auto;
+    align-self: center;
+    grid-area: edit;
+    justify-self: center;
+}
 }
 
 
@@ -1796,4 +1900,81 @@ dialog.new__order__add__units {
   width: 100%;
   max-width: 700px;
   box-sizing: border-box;
+}
+
+.new__order__add__units .form__group {
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+.top__nav__wrapper {
+  position: sticky;
+  top: 0px;
+  background: white;
+  z-index: 9999;
+}
+
+/* associate detaljer */
+
+p.associate__details__header__company {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0px;
+  text-align: center;
+}
+
+p.associate__details__header__type {
+  margin: 0;
+  color: var(--bx2-blue);
+  font-size: 1.3rem;
+  text-align: center;
+}
+
+img.associate__details__header__logo {
+  border-radius: 50%;
+  margin: 0 auto;
+  display: block;
+}
+
+p.associate__details__body__row__label {
+  margin: 0;
+  color: var(--bx2-blue);
+  font-size: 1rem;
+  align-self: center;
+}
+
+p.associate__details__body__row__value {
+  
+  align-self: center;
+
+}
+
+.associate__details__body__row {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  grid-template-rows: 34px;
+  margin: 0 auto;
+  width: 296px;
+}
+
+p.associate__details__header__type {
+  margin: 0;
+  color: var(--bx2-blue);
+  font-size: 1.3rem;
+  padding-bottom: 1rem;
+  margin-bottom: 0.5rem;
+  text-align: center;
+  border-bottom: 1px solid var(--bx2-lightgray3);
+}
+
+dialog.associate__details {
+  max-width: 700px;
+  width: 100%;
+}
+dialog.associate__details .button__back {
+display: block;
+}
+
+.associate__details__body {
+
 }

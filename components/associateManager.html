@@ -4,34 +4,31 @@
         <h3> Lägg till leverantör</h3>
         <p> När en organisation godkänner att agera som leverantör öppnas möjligheten att skicka arbetsuppgifter till dem genom Bravo X2 Portal.  </p>
 
-        <div class="associate__list__row">
+        <div class="associate__list__row" onClick="document.getElementById('associate-details-dialog').showModal()" >
             <img src="img/logo1.PNG" class="associate__list__row__logo"/>
             <p class="associate__list__row__company"> Täby Bärgning & Assistans</p>
             <p class="associate__list__row__type"> Bärgning</p>
-            <a href="#" class="associate__list__row__phone"> Telefon</a>
-            <a href="#" class="associate__list__row__email"> E-post</a>
+
           
             <img src="icons/blue/leftarrow.png" class="associate__list__row__add"/>
         </div>
 
 
-        <div class="associate__list__row">
+        <div class="associate__list__row" onClick="document.getElementById('associate-details-dialog').showModal()" >
             <img src="img/logo2.PNG" class="associate__list__row__logo"/>
             <p class="associate__list__row__company"> Umeå Bärgningstjänst</p>
             <p class="associate__list__row__type"> Bärgning</p>
-            <a href="#" class="associate__list__row__phone"> Telefon</a>
-            <a href="#" class="associate__list__row__email"> E-post</a>
+
           
             <img src="icons/blue/leftarrow.png" class="associate__list__row__add"/>
         </div>
 
 
-        <div class="associate__list__row">
+        <div class="associate__list__row" onClick="document.getElementById('associate-details-dialog').showModal()" >
             <img src="img/logo3.PNG" class="associate__list__row__logo"/>
             <p class="associate__list__row__company"> Gotlands Räddningstjänst</p>
             <p class="associate__list__row__type"> Bärgning</p>
-            <a href="#" class="associate__list__row__phone"> Telefon</a>
-            <a href="#" class="associate__list__row__email"> E-post</a>
+
           
             <img src="icons/blue/leftarrow.png" class="associate__list__row__add"/>
         </div>
@@ -41,46 +38,67 @@
         <h3> Dina levernatörer</h3>
         <p> Här kan du hantera dina levernatörer och  </p>
 
-        <div class="associate__list__row">
+        <div class="associate__list__row" onClick="document.getElementById('associate-details-dialog').showModal()" >
             <img src="img/logo1.PNG" class="associate__list__row__logo"/>
             <p class="associate__list__row__company"> Mälardalens Tungbärgning</p>
             <p class="associate__list__row__type"> Bärgning</p>
-            <a href="#" class="associate__list__row__phone"> Telefon</a>
-            <a href="#" class="associate__list__row__email"> E-post</a>
+
             <p class="associate__list__row__status associate__status__green "> Leverantör
             </p>
             
-            <img src="icons/red/delete.png" class="associate__list__row__add"/>
+            <img src="icons/blue/leftarrow.png" class="associate__list__row__add"/>
         </div>
         
         
-        <div class="associate__list__row">
+        <div class="associate__list__row" onClick="document.getElementById('associate-details-dialog').showModal()" >
             <img src="img/logo2.PNG" class="associate__list__row__logo"/>
             <p class="associate__list__row__company"> TMA Nord</p>
             <p class="associate__list__row__type"> TMA</p>
-            <a href="#" class="associate__list__row__phone"> Telefon</a>
-            <a href="#" class="associate__list__row__email"> E-post</a>
+
             <p class="associate__list__row__status associate__status__yellow  "> Väntar svar
             </p>
             
             
-            <img src="icons/red/delete.png" class="associate__list__row__add"/>
+            <img src="icons/blue/leftarrow.png" class="associate__list__row__add"/>
         </div>
         
         
-        <div class="associate__list__row">
+        <div class="associate__list__row" onClick="document.getElementById('associate-details-dialog').showModal()" >
             <img src="img/logo3.PNG" class="associate__list__row__logo"/>
             <p class="associate__list__row__company"> Gävle Bärgning & Transport </p>
             <p class="associate__list__row__type"> Bärgning</p>
-            <a href="#" class="associate__list__row__phone"> Telefon</a>
-            <a href="#" class="associate__list__row__email"> E-post</a>
+
             <p class="associate__list__row__status associate__status__green "> Leverantör
             </p>
                 
           
-            <img src="icons/red/delete.png" class="associate__list__row__add"/>
+            <img src="icons/blue/leftarrow.png" class="associate__list__row__add"/>
         </div>
 </div>
 
+<dialog class="associate__details" id="associate-details-dialog">
+    <div class="associate__details__wrapper">
+        <div class="associate__details__header">
+            <img src="img/logo1.PNG" class="associate__details__header__logo"/>
+            <p class="associate__details__header__company"> Täby Bärgning & Assistans</p>
+            <p class="associate__details__header__type"> Bärgning</p>
+        </div>
+        <div class="associate__details__body">
+            <div class="associate__details__body__row">
+                <p class="associate__details__body__row__label"> Adress</p>
+                <p class="associate__details__body__row__value"> Täbyvägen 1, 183 30 Täby</p>
+            </div>
+            <div class="associate__details__body__row">
+                <p class="associate__details__body__row__label"> Telefon</p>
+                <p class="associate__details__body__row__value"> 08-123 456 78</p>
+            </div>
+            <div class="associate__details__body__row">
+                <p class="associate__details__body__row__label"> E-post</p>
+                <p class="associate__details__body__row__value"> stefan@grafikcentralen.se </p>
+            </div>
+                <button class="save__button"> Lägg till leverantör</button>
+                <button class="button__back" onClick="document.getElementById('associate-details-dialog').close()"> Stäng</button>
+                <button class="delete__button"> Ta bort leverantör</button>
+            </dialog>
 
 </div>

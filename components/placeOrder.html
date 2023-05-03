@@ -1,5 +1,5 @@
 <div class="create__order__wrapper content__background">
-    <h2 class="page__heading">Skapa beställning</h2>
+    <h2 class="page__heading">Skapa beställning  <span class="thin"> Multitransport</span></h2>
 
     <dialog class="prompt__job__type" id="prompt-job-type" onClick="this.close()">
         <h2 class="page__heading">Välj jobbtyp</h3>
@@ -53,13 +53,14 @@
            
             
             
-            <div class="form__one__col">
+            <div class="form__one__col span-2">
                 
                 <div class="form__group">
-                    <label for="order__name">Hämtas tidigast</label>
-                    <input type="date" id="order__name" name="order__name" placeholder="">
-                    Lämnas tidigast
-                    <input type="date" id="order__name" name="order__name" placeholder="">
+                    <label for="pickup_time">Hämtas tidigast</label>
+                    <input type="date" id="order__name" name="pickup_time" placeholder="">
+                    
+                    <label for="delivery_time">Hämtas tidigast</label>
+                    <input type="date" id="order__name" name="delivery_time" placeholder="">
                     
                 </div>
             </div>
@@ -68,7 +69,7 @@
         <button onClick="
         document.getElementById('form-step-1').style.display = 'none'
         document.getElementById('form-step-2').style.display = 'block'
-        " class="button__next__step">Gå vidare</button>
+        " class="button__next__step">Nästa steg</button>
     </div>
     
     
@@ -86,7 +87,7 @@
             <p class="form__step__unit__id__value">XDZ 231</p>
             <p class="form__step__unit__model__taxonomy">Model</p>
             <p class="form__step__unit__model__value">Volvo XC90</p>
-            <p class="form__step__unit__type__taxonomy">Typ</p>
+            <p class="form__step__unit__type__taxonomy">Fordonstyp</p>
             <p class="form__step__unit__type__value">Personbil</p>
             <p class="form__step__unit__weight__taxonomy">Totalvikt</p>
             <p class="form__step__unit__weight__value">2400kg</p>
@@ -97,7 +98,7 @@
             <p class="form__step__unit__id__value">XDZ 231</p>
             <p class="form__step__unit__model__taxonomy">Model</p>
             <p class="form__step__unit__model__value">Volvo XC90</p>
-            <p class="form__step__unit__type__taxonomy">Typ</p>
+            <p class="form__step__unit__type__taxonomy">Fordonstyp</p>
             <p class="form__step__unit__type__value">Personbil</p>
             <p class="form__step__unit__weight__taxonomy">Totalvikt</p>
             <p class="form__step__unit__weight__value">2400kg</p>
@@ -140,7 +141,13 @@
     <button onClick="
     document.getElementById('form-step-2').style.display = 'none'
     document.getElementById('form-step-3').style.display = 'block'
-    " class="button__next__step">Vidare till destination -></button>
+    " class="button__next__step">Nästa steg</button>
+   
+    <button onClick="
+    document.getElementById('form-step-2').style.display = 'none'
+    document.getElementById('form-step-1').style.display = 'block'
+    " class="button__back">Tillbaka</button>
+
 </div>
 
 <div class="form__step content__frame" id="form-step-3">
@@ -168,7 +175,12 @@
     <button onClick="
     document.getElementById('form-step-3').style.display = 'none'
     document.getElementById('form-step-4').style.display = 'block'
-    " class="button__next__step">Vidare till destination -></button>
+    " class="button__next__step">Nästa steg</button>
+
+    <button onClick="
+    document.getElementById('form-step-3').style.display = 'none'
+    document.getElementById('form-step-2').style.display = 'block'
+    " class="button__back">Tillbaka</button>
 </div>
 
 <div class="form__step content__frame" id="form-step-4">
@@ -196,7 +208,12 @@
     <button onClick="
     document.getElementById('form-step-4').style.display = 'none'
     document.getElementById('form-step-5').style.display = 'block'
-    " class="button__next__step">Ladda upp foto</button>
+    " class="button__next__step">Nästa steg</button>
+
+    <button onClick="
+    document.getElementById('form-step-4').style.display = 'none'
+    document.getElementById('form-step-3').style.display = 'block'
+    " class="button__back">Tillbaka</button>
 </div>
 
 <div class="form__step content__frame" id="form-step-5">
@@ -205,7 +222,10 @@
         <h2>Foto</h2>
     </div>
     <div class="photo__col">
-        <div class="photo__button"><img src="placeholder.jpg"></div>
+        <div class="photo__button">
+            <img src="placeholder.jpg">
+            <p class="photo__label">Ladda upp foto</p>
+        </div>
         <div class="form__group">
             <label for="order__name">Kommentar</label>
             <textarea class="photo__description" placeholder="Ex: Höjd 2.8"></textarea>
@@ -214,7 +234,12 @@
     <button onClick="
     document.getElementById('form-step-5').style.display = 'none'
     document.getElementById('form-step-6').style.display = 'block'
-    " class="button__next__step">Vidare till leverantör -> </button>
+    " class="button__next__step">Nästa steg</button>
+
+    <button onClick="
+    document.getElementById('form-step-5').style.display = 'none'
+    document.getElementById('form-step-4').style.display = 'block'
+    " class="button__back">Tillbaka</button>
 </div>
 
 <div class="form__step content__frame" id="form-step-6">
@@ -257,7 +282,12 @@
     <button onClick="
     document.getElementById('form-step-6').style.display = 'none'
     document.getElementById('form-step-7').style.display = 'block'
-    " class="button__next__step"> Vidare till granskning -></button>
+    " class="button__next__step"> Nästa steg</button>
+
+    <button onClick="
+    document.getElementById('form-step-6').style.display = 'none'
+    document.getElementById('form-step-5').style.display = 'block'
+    " class="button__back">Tillbaka</button>
 </div>
 
 <div class="form__step content__frame" id="form-step-7">
@@ -302,14 +332,19 @@
                 <p class="summary__data">Bärgningstjänsten</p>
             </div>
 
-            <hr>
         </div>
+        
 
     </div>
     <button style="display: inherit" onClick="
     document.getElementById('form-step-6').style.display = 'none'
     document.getElementById('form-step-7').style.display = 'block'
-    " class="button__next__step">BESTÄLL</button>
+    " class="button__next__step">Beställ</button>
+
+    <button onClick="
+    document.getElementById('form-step-7').style.display = 'none'
+    document.getElementById('form-step-6').style.display = 'block'
+    " class="button__back">Tillbaka</button>
 </div>
 </div>
    
